@@ -1,8 +1,8 @@
 {
   "site": {
-    "name": "Plomberie Martin",
+    "name": "Booster Agency",
     "slug": "principal",
-    "domains": ["plomberie-martin.fr", "www.plomberie-martin.fr"]
+    "domains": ["site-de-creation-de-site.pages.dev"]
   },
   "settings": {
     "seo": { "titleSuffix": " | Plomberie Martin" }

@@ -1,30 +1,22 @@
 {
   "site": {
-    "name": "Nom du site",
+    "name": "Booster Agency",
     "domains": [
-      "lea-booster-demo.pages.dev"
+      "site-de-creation-de-site.pages.dev"
     ],
     "settings": {
       "seo": {
         "titleSuffix": " | Plomberie Martin"
-      },
-      "contactForm": {
-        "enabled": true
       }
     },
-    "publishedAt": "2026-09-25T11:12:30.331Z"
+    "publishedAt": "2026-09-28T10:03:53.745Z"
   },
   "sections": {
     "hero": {
-      "image": {
-        "url": "https://pub-ab75a81c5b2449f9a49ab444e490cdfb.r2.dev/sites/cmugoedn200000v8zgi6jlgu4/cmugoedra00080v8zcs2df67d/7c744035-8927-4152-b328-db0be1b80e5c.jpg",
-        "alt": "Photo de démonstration",
-        "width": 2000,
-        "height": 424
-      },
-      "title": "Nom du site",
-      "ctaLabel": "Formulaire",
-      "subtitle": "Test Achetez les meilleurs cuisine"
+      "image": null,
+      "title": "Plomberie Martin, dépannage 7j/7",
+      "ctaLabel": "Demander un devis",
+      "subtitle": "Intervention en moins d'une heure sur Lyon et sa périphérie."
     },
     "testimonials": {
       "items": [
@@ -36,7 +28,7 @@
         {
           "name": "Julien B.",
           "photo": null,
-          "quote": "Le devis en 24 h, le chantier la semaine suivante."
+          "quote": "Intervention efficace, tarif honnête."
         }
       ]
     },
