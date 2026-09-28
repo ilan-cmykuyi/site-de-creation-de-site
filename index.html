@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <script>
+      // Anti-clignotement des pages prérendues (README, « Prérendu »). Si le
+      // cache de ce navigateur (src/lib/content-cache.ts, même clé) tient une
+      // publication plus récente que celle de ce HTML, #root reste masqué
+      // (classe content-stale, src/index.css) jusqu'à ce que
+      // SiteContentProvider affiche ce cache, et 3 s au plus si le JavaScript
+      // du site ne démarre pas. Sans data-public-token (serveur de dev,
+      // build sans jeton) : rien.
+      (function () {
+        const root = document.documentElement;
+        const token = root.getAttribute("data-public-token");
+        if (!token) return;
+        try {
+          const cached = JSON.parse(localStorage.getItem("lea-site-content:v1:" + token) || "null");
+          const cachedAt = Date.parse(cached && cached.site && cached.site.publishedAt);
+          const builtAt = Date.parse(root.getAttribute("data-published-at") || "") || 0;
+          if (cachedAt > builtAt) {
+            root.classList.add("content-stale");
+            setTimeout(function () {
+              root.classList.remove("content-stale");
+            }, 3000);
+          }
+        } catch {
+          // Stockage indisponible ou cache illisible : le HTML prérendu s'affiche tel quel.
+        }
+      })();
+    </script>
+    <!-- Titre et balises de tête : écrits au build par scripts/prerender.mjs (<SiteHead>, <StructuredData>), tenus à jour dans le navigateur. -->
+    <title>Site</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

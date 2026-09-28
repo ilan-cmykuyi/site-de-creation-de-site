@@ -1,0 +1,93 @@
+{
+  "site": {
+    "name": "Plomberie Martin",
+    "slug": "principal",
+    "domains": ["plomberie-martin.fr", "www.plomberie-martin.fr"]
+  },
+  "settings": {
+    "seo": { "titleSuffix": " | Plomberie Martin" }
+  },
+  "sections": [
+    {
+      "key": "hero",
+      "label": "Bandeau d'accueil",
+      "fields": [
+        { "key": "title", "label": "Titre principal", "type": "text", "required": true, "maxLength": 80 },
+        { "key": "subtitle", "label": "Sous-titre", "type": "textarea", "maxLength": 200 },
+        { "key": "image", "label": "Photo", "type": "image", "help": "Paysage, 1600 px de large minimum" },
+        { "key": "ctaLabel", "label": "Texte du bouton", "type": "text" }
+      ]
+    },
+    {
+      "key": "testimonials",
+      "label": "Témoignages",
+      "fields": [
+        {
+          "key": "items",
+          "label": "Témoignages",
+          "type": "list",
+          "max": 12,
+          "fields": [
+            { "key": "name", "label": "Nom", "type": "text", "required": true },
+            { "key": "quote", "label": "Témoignage", "type": "textarea", "required": true },
+            { "key": "photo", "label": "Photo", "type": "image" }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "nav",
+      "label": "Menu",
+      "fields": [
+        { "key": "brandName", "label": "Nom affiché dans le menu", "type": "text", "maxLength": 60, "help": "Laissé vide, le nom du site (Réglages du site) est affiché." },
+        { "key": "homeLabel", "label": "Accueil", "type": "text", "required": true, "maxLength": 30, "help": "Le nombre de pages est fixe ; vous pouvez seulement renommer les entrées." },
+        { "key": "blogLabel", "label": "Blog", "type": "text", "required": true, "maxLength": 30, "help": "Le nombre de pages est fixe ; vous pouvez seulement renommer les entrées." },
+        { "key": "contactLabel", "label": "Contact", "type": "text", "required": true, "maxLength": 30, "help": "Le nombre de pages est fixe ; vous pouvez seulement renommer les entrées." }
+      ]
+    },
+    {
+      "key": "footer",
+      "label": "Pied de page",
+      "fields": [
+        { "key": "tagline", "label": "Phrase de présentation", "type": "textarea", "maxLength": 200, "help": "Une ou deux phrases, sous le nom de votre entreprise." },
+        { "key": "phone", "label": "Téléphone", "type": "text", "maxLength": 30 },
+        { "key": "email", "label": "E-mail", "type": "text", "maxLength": 120 },
+        { "key": "address", "label": "Adresse", "type": "textarea", "maxLength": 300 },
+        { "key": "hours", "label": "Horaires", "type": "textarea", "maxLength": 300 },
+        {
+          "key": "socials",
+          "label": "Réseaux sociaux",
+          "type": "list",
+          "max": 6,
+          "help": "Six liens au plus, affichés en bas de chaque page.",
+          "fields": [
+            { "key": "label", "label": "Nom du réseau", "type": "text", "required": true, "maxLength": 40 },
+            { "key": "url", "label": "Adresse de votre page", "type": "url", "required": true }
+          ]
+        },
+        { "key": "copyright", "label": "Mention de copyright", "type": "text", "maxLength": 120, "help": "L'année est ajoutée automatiquement, avec le symbole © devant." },
+        { "key": "legalLinkLabel", "label": "Lien vers les mentions légales", "type": "text", "required": true, "maxLength": 40, "help": "Texte du lien affiché en bas de chaque page ; il sert aussi de titre à la page des mentions légales." }
+      ]
+    },
+    {
+      "key": "legal",
+      "label": "Mentions légales",
+      "previewPath": "/mentions-legales",
+      "fields": [
+        { "key": "companyName", "label": "Raison sociale", "type": "text", "maxLength": 120, "help": "Nom officiel de votre entreprise, tel qu'il figure au registre." },
+        {
+          "key": "companyForm",
+          "label": "Forme juridique",
+          "type": "select",
+          "options": ["SAS", "SARL", "EI", "EURL", "SASU", "Auto-entrepreneur", "Autre"],
+          "help": "Avec « Autre », la forme juridique n'est pas affichée : précisez-la dans le texte des mentions légales."
+        },
+        { "key": "siret", "label": "SIRET", "type": "text", "maxLength": 20 },
+        { "key": "publisher", "label": "Directeur de la publication", "type": "text", "maxLength": 120, "help": "Responsable de la publication" },
+        { "key": "hostingProvider", "label": "Hébergeur", "type": "textarea", "maxLength": 300, "help": "Nom et adresse de l'hébergeur du site." },
+        { "key": "legalBody", "label": "Texte des mentions légales", "type": "richtext", "help": "Texte complet des mentions légales, affiché sur la page /mentions-legales" },
+        { "key": "privacyBody", "label": "Politique de confidentialité", "type": "richtext", "help": "Affichée sur la même page, sous les mentions légales." }
+      ]
+    }
+  ]
+}

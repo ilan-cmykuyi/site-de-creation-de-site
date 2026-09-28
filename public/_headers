@@ -1,0 +1,7 @@
+# En-têtes HTTP du site, lus par Cloudflare Pages (copié tel quel dans dist/).
+# frame-ancestors : seuls le site lui-même et Lea CRM (aperçu intégré à
+# l'éditeur de section) peuvent l'afficher dans un cadre ; tout autre site est
+# refusé (clickjacking). Ne jamais retirer https://app.leacrm.com, sans quoi
+# l'aperçu du CRM affiche une page bloquée.
+/*
+  Content-Security-Policy: frame-ancestors 'self' https://app.leacrm.com

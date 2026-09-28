@@ -1,0 +1,22 @@
+# Hébergement Apache (circuit FTP OVH). Les pages sont prérendues au build en
+# fichiers .html plats (scripts/prerender.mjs) : /blog est servi par
+# blog.html et /blog/mon-article par blog/mon-article.html, comme sur
+# Cloudflare Pages ; /blog/ est redirigé vers /blog, l'adresse de la
+# canonique. Toute autre adresse reçoit 404.html avec le code 404 : son
+# JavaScript affiche la bonne page si elle existe (article publié après le
+# dernier build). Sans effet sur Cloudflare Pages, qui fait tout cela seul.
+ErrorDocument 404 /404.html
+
+# /blog est aussi un dossier (blog/<article>.html) : sans cette ligne, Apache
+# le redirige vers /blog/ avant la réécriture en blog.html (boucle avec la
+# règle ci-dessous).
+DirectorySlash Off
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+  RewriteRule ^(.+)/$ /$1 [R=301,L]
+  RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+  RewriteRule ^(.+)$ $1.html [L]
+</IfModule>

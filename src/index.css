@@ -1,0 +1,18 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* Styles de base du site. Le thème (couleurs, police) se règle ici avec @theme,
+   voir https://tailwindcss.com/docs/theme */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white text-slate-900 antialiased;
+}
+
+/* Page prérendue plus ancienne que le cache du navigateur : masquée le temps
+   que ce cache s'affiche. Voir le script anti-clignotement d'index.html. */
+.content-stale #root {
+  visibility: hidden;
+}
