@@ -19,6 +19,20 @@
       { "name": "Paysagiste", "category": "Extérieur", "color": "Jaune", "isExample": true, "link": "" }
     ]
   },
+  "metiers": {
+    "eyebrow": "Métiers",
+    "title": "Nous créons des sites pour les artisans, quel que soit leur métier.",
+    "items": [
+      { "name": "Plombiers" },
+      { "name": "Électriciens" },
+      { "name": "Menuisiers" },
+      { "name": "Couvreurs" },
+      { "name": "Paysagistes" },
+      { "name": "Carreleurs" },
+      { "name": "Peintres" },
+      { "name": "Maçons" }
+    ]
+  },
   "testimonials": {
     "items": [
       { "name": "Prénom N.", "quote": "Votre témoignage client" },

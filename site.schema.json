@@ -42,6 +42,24 @@
       ]
     },
     {
+      "key": "metiers",
+      "label": "Métiers",
+      "fields": [
+        { "key": "eyebrow", "label": "Étiquette de la section", "type": "text", "maxLength": 40, "help": "Le petit mot en capitales posé au-dessus de la section." },
+        { "key": "title", "label": "Grande phrase (facultative)", "type": "text", "maxLength": 120, "help": "Une phrase avant la liste des métiers. Laissez vide pour n'afficher que la liste." },
+        {
+          "key": "items",
+          "label": "Métiers",
+          "type": "list",
+          "max": 16,
+          "help": "Les métiers que vous servez, affichés en grand, à la suite, dans cet ordre.",
+          "fields": [
+            { "key": "name", "label": "Métier", "type": "text", "required": true, "maxLength": 30, "help": "En un ou deux mots, par exemple « Plombiers »." }
+          ]
+        }
+      ]
+    },
+    {
       "key": "testimonials",
       "label": "Témoignages",
       "fields": [
