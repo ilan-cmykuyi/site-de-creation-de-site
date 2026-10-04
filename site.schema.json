@@ -36,10 +36,13 @@
       "key": "nav",
       "label": "Menu",
       "fields": [
-        { "key": "brandName", "label": "Nom affiché dans le menu", "type": "text", "maxLength": 60, "help": "Laissé vide, le nom du site (Réglages du site) est affiché." },
+        { "key": "announcement", "label": "Ligne d'annonce", "type": "text", "maxLength": 90, "help": "Une phrase courte, centrée tout en haut de chaque page. Laissez vide pour ne rien afficher." },
+        { "key": "brandName", "label": "Nom affiché dans le menu", "type": "text", "maxLength": 60, "help": "Affiché en haut à gauche des pages autres que l'accueil (sur l'accueil, c'est le nom géant du bandeau). Laissé vide, le nom du site (Réglages du site) est affiché." },
         { "key": "homeLabel", "label": "Accueil", "type": "text", "required": true, "maxLength": 30, "help": "Le nombre de pages est fixe ; vous pouvez seulement renommer les entrées." },
+        { "key": "realisationsLabel", "label": "Lien vers les exemples", "type": "text", "maxLength": 30, "help": "Mène à la section des exemples, sur l'accueil. Laissez vide pour retirer ce lien du menu." },
+        { "key": "offresLabel", "label": "Lien vers les offres", "type": "text", "maxLength": 30, "help": "Mène à la section des offres, sur l'accueil. Laissez vide pour retirer ce lien du menu." },
         { "key": "blogLabel", "label": "Blog", "type": "text", "required": true, "maxLength": 30, "help": "Le nombre de pages est fixe ; vous pouvez seulement renommer les entrées." },
-        { "key": "contactLabel", "label": "Contact", "type": "text", "required": true, "maxLength": 30, "help": "Le nombre de pages est fixe ; vous pouvez seulement renommer les entrées." }
+        { "key": "contactLabel", "label": "Contact", "type": "text", "required": true, "maxLength": 30, "help": "Affiché en pastille noire en haut de chaque page ; mène au formulaire de contact." }
       ]
     },
     {

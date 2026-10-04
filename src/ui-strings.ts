@@ -19,6 +19,11 @@ export const ui = {
   preview: {
     badge: "Aperçu du brouillon : ce que vous voyez n'est pas encore publié.",
   },
+  nav: {
+    /** Bouton du menu sur téléphone, menu fermé puis ouvert. */
+    menu: "Menu",
+    close: "Fermer",
+  },
   blog: {
     empty: "Aucun article pour l'instant.",
     loading: "Chargement de l'article…",

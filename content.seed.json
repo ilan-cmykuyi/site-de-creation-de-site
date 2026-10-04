@@ -11,8 +11,11 @@
     ]
   },
   "nav": {
+    "announcement": "Votre site, vos textes, vos photos : vous gardez la main.",
     "brandName": "",
     "homeLabel": "Accueil",
+    "realisationsLabel": "Exemples",
+    "offresLabel": "Offres",
     "blogLabel": "Blog",
     "contactLabel": "Contact"
   },

@@ -6,12 +6,18 @@
 // ne les a pas encore dans son contenu publié, et les composants doivent
 // alors rendre ce qu'ils ont, sans casser.
 
-/** Section `nav` : nom affiché et libellés des entrées du menu (une par page fixe). */
+/** Section `nav` : nom affiché, ligne d'annonce et libellés des entrées du menu (une par page fixe, plus deux ancres de l'accueil). */
 export type NavSection = {
   brandName?: string;
   homeLabel?: string;
   blogLabel?: string;
   contactLabel?: string;
+  /** Phrase courte tout en haut de chaque page ; vide, la ligne n'est pas affichée. */
+  announcement?: string;
+  /** Lien vers la section des exemples de l'accueil (#realisations) ; vide, l'entrée disparaît. */
+  realisationsLabel?: string;
+  /** Lien vers la section des offres de l'accueil (#offres) ; vide, l'entrée disparaît. */
+  offresLabel?: string;
 };
 
 export type SocialLink = { label?: string; url?: string };
