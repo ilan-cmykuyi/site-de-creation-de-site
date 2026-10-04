@@ -150,6 +150,11 @@
       }
     ]
   },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Parlons de votre site.",
+    "text": "Dites-nous quel est votre métier et où vous travaillez. Nous revenons vers vous pour en parler."
+  },
   "nav": {
     "announcement": "Votre site, vos textes, vos photos : vous gardez la main.",
     "brandName": "",

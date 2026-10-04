@@ -1,8 +1,11 @@
 // src/components/ContactForm.tsx
-import { useState, type FormEvent } from "react";
+import { useState, type FormEvent, type ReactNode } from "react";
 import { useSiteMeta } from "../hooks/site-content-context";
 import { hasPublicToken, publicApiUrl } from "../lib/api";
+import { SECTION_SPACE, TITLE, WRAP } from "../lib/layout";
 import { ui } from "../ui-strings";
+import { ArrowIcon } from "./Icons";
+import { Eyebrow } from "./Section";
 
 type Status =
   | { kind: "idle" }
@@ -13,8 +16,16 @@ type Status =
   | { kind: "disabled" }
   | { kind: "error" };
 
+const labelClass = "caps mb-2 block text-muted";
 const inputClass =
-  "mt-1 block w-full rounded-md border border-slate-300 px-3 py-2 text-slate-900 shadow-sm focus:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-600/30";
+  "block w-full rounded-[14px] border border-transparent bg-mist px-4 py-3.5 text-[16px] text-ink transition-colors duration-150 focus:border-ink focus:bg-paper focus:outline-none";
+
+type ContactFormProps = {
+  /** Étiquette de la section, posée sur le filet (contenu de Lea CRM). */
+  eyebrow?: string;
+  /** Titre et texte d'introduction, à gauche du formulaire sur grand écran ; à défaut, ui.form.title. */
+  intro?: ReactNode;
+};
 
 /**
  * Formulaire de contact → POST /forms → prospect dans Lea CRM. Corps accepté :
@@ -23,11 +34,11 @@ const inputClass =
  * (400 sinon), retire le HTML des champs texte, limite à 5 envois/min/IP et
  * 50/jour/site (429 avec Retry-After, exposé en CORS).
  *
- * Masqué quand le formulaire est désactivé dans Réglages
- * (settings.contactForm.enabled === false) ou quand l'API répond 404
+ * Masqué, introduction comprise, quand le formulaire est désactivé dans
+ * Réglages (settings.contactForm.enabled === false) ou quand l'API répond 404
  * (formulaire désactivé entre deux builds, ou site inconnu : indiscernables).
  */
-export function ContactForm() {
+export function ContactForm({ eyebrow, intro }: ContactFormProps) {
   const { site } = useSiteMeta();
   const [status, setStatus] = useState<Status>({ kind: "idle" });
 
@@ -96,79 +107,79 @@ export function ContactForm() {
   const sending = status.kind === "sending";
 
   return (
-    <section id="contact" className="mx-auto max-w-2xl px-4 py-16">
-      <h2 className="text-2xl font-semibold tracking-tight text-slate-900">{ui.form.title}</h2>
-      <form onSubmit={onSubmit} noValidate className="mt-6 grid gap-4">
-        <div>
-          <label htmlFor="name" className="block text-sm font-medium text-slate-700">
-            {ui.form.name}
-          </label>
-          <input id="name" name="name" required maxLength={120} autoComplete="name" className={inputClass} />
-        </div>
-        <div className="grid gap-4 sm:grid-cols-2">
+    <section id="contact" className={`${WRAP} ${SECTION_SPACE} pb-24 md:pb-36`}>
+      <Eyebrow>{eyebrow}</Eyebrow>
+      <div className="mt-10 grid gap-x-8 gap-y-12 md:mt-16 lg:grid-cols-12">
+        <div className="lg:col-span-5">{intro ?? <h2 className={TITLE}>{ui.form.title}</h2>}</div>
+        <form onSubmit={onSubmit} noValidate className="grid gap-5 lg:col-span-6 lg:col-start-7">
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-slate-700">
-              {ui.form.email}
+            <label htmlFor="name" className={labelClass}>
+              {ui.form.name}
             </label>
-            <input id="email" name="email" type="email" maxLength={200} autoComplete="email" className={inputClass} />
+            <input id="name" name="name" required maxLength={120} autoComplete="name" className={inputClass} />
+          </div>
+          <div className="grid gap-5 sm:grid-cols-2">
+            <div>
+              <label htmlFor="email" className={labelClass}>
+                {ui.form.email}
+              </label>
+              <input id="email" name="email" type="email" maxLength={200} autoComplete="email" className={inputClass} />
+            </div>
+            <div>
+              <label htmlFor="phone" className={labelClass}>
+                {ui.form.phone}
+              </label>
+              <input id="phone" name="phone" type="tel" maxLength={40} autoComplete="tel" className={inputClass} />
+            </div>
           </div>
           <div>
-            <label htmlFor="phone" className="block text-sm font-medium text-slate-700">
-              {ui.form.phone}
+            <label htmlFor="company" className={labelClass}>
+              {ui.form.company}
             </label>
-            <input id="phone" name="phone" type="tel" maxLength={40} autoComplete="tel" className={inputClass} />
+            <input id="company" name="company" maxLength={200} autoComplete="organization" className={inputClass} />
           </div>
-        </div>
-        <div>
-          <label htmlFor="company" className="block text-sm font-medium text-slate-700">
-            {ui.form.company}
-          </label>
-          <input id="company" name="company" maxLength={200} autoComplete="organization" className={inputClass} />
-        </div>
-        <div>
-          <label htmlFor="message" className="block text-sm font-medium text-slate-700">
-            {ui.form.message}
-          </label>
-          <textarea id="message" name="message" required maxLength={5000} rows={5} className={inputClass} />
-        </div>
+          <div>
+            <label htmlFor="message" className={labelClass}>
+              {ui.form.message}
+            </label>
+            <textarea id="message" name="message" required maxLength={5000} rows={5} className={`${inputClass} resize-y`} />
+          </div>
 
-        {/* Pot de miel : invisible pour un visiteur, à la portée d'un robot qui remplit tous les champs. */}
-        <div style={{ position: "absolute", left: "-9999px" }} aria-hidden="true">
-          <label htmlFor="website">{ui.form.honeypot}</label>
-          <input id="website" name="website" tabIndex={-1} autoComplete="off" />
-        </div>
+          {/* Pot de miel : invisible pour un visiteur, à la portée d'un robot qui remplit tous les champs. */}
+          <div style={{ position: "absolute", left: "-9999px" }} aria-hidden="true">
+            <label htmlFor="website">{ui.form.honeypot}</label>
+            <input id="website" name="website" tabIndex={-1} autoComplete="off" />
+          </div>
 
-        <div>
-          <button
-            type="submit"
-            disabled={sending}
-            className="inline-flex items-center rounded-md bg-blue-700 px-5 py-2.5 font-medium text-white shadow-sm hover:bg-blue-800 disabled:opacity-60"
-          >
-            {sending ? ui.form.sending : ui.form.send}
-          </button>
-        </div>
+          <div className="pt-2">
+            <button type="submit" disabled={sending} className="button disabled:opacity-60">
+              {sending ? ui.form.sending : ui.form.send}
+              <ArrowIcon />
+            </button>
+          </div>
 
-        {status.kind === "success" && (
-          <p role="status" className="text-sm text-green-700">
-            {ui.form.success}
-          </p>
-        )}
-        {status.kind === "missing_contact" && (
-          <p role="alert" className="text-sm text-red-700">
-            {ui.form.missingContact}
-          </p>
-        )}
-        {status.kind === "rate_limited" && (
-          <p role="alert" className="text-sm text-red-700">
-            {ui.form.rateLimited(status.retryAfterSec)}
-          </p>
-        )}
-        {status.kind === "error" && (
-          <p role="alert" className="text-sm text-red-700">
-            {ui.form.error}
-          </p>
-        )}
-      </form>
+          {status.kind === "success" && (
+            <p role="status" className="rounded-[14px] bg-jaune px-4 py-3 text-[15px] font-medium">
+              {ui.form.success}
+            </p>
+          )}
+          {status.kind === "missing_contact" && (
+            <p role="alert" className="text-[15px] text-error">
+              {ui.form.missingContact}
+            </p>
+          )}
+          {status.kind === "rate_limited" && (
+            <p role="alert" className="text-[15px] text-error">
+              {ui.form.rateLimited(status.retryAfterSec)}
+            </p>
+          )}
+          {status.kind === "error" && (
+            <p role="alert" className="text-[15px] text-error">
+              {ui.form.error}
+            </p>
+          )}
+        </form>
+      </div>
     </section>
   );
 }

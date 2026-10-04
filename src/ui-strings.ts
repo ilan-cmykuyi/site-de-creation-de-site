@@ -42,7 +42,7 @@ export const ui = {
     name: "Nom",
     email: "E-mail",
     phone: "Téléphone",
-    company: "Société",
+    company: "Entreprise",
     message: "Message",
     honeypot: "Laissez ce champ vide",
     send: "Envoyer",

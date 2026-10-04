@@ -5,9 +5,9 @@
 // client : nouvelle section = composant dans src/sections/ + entrée dans
 // site.schema.json + valeurs dans le seed (voir CLAUDE.md).
 import { SiteHead } from "../components/SiteHead";
-import { ContactForm } from "../components/ContactForm";
 import { useFullSiteContent, useSiteMeta } from "../hooks/site-content-context";
 import { siteShareImage } from "../lib/seo";
+import { Contact } from "../sections/Contact";
 import { Faq } from "../sections/Faq";
 import { Hero } from "../sections/Hero";
 import { Methode } from "../sections/Methode";
@@ -33,7 +33,7 @@ export function Home() {
       <Offres />
       <Testimonials />
       <Faq />
-      <ContactForm />
+      <Contact />
     </>
   );
 }

@@ -160,6 +160,15 @@
       ]
     },
     {
+      "key": "contact",
+      "label": "Contact",
+      "fields": [
+        { "key": "eyebrow", "label": "Étiquette de la section", "type": "text", "maxLength": 40, "help": "Le petit mot en capitales posé au-dessus du formulaire." },
+        { "key": "title", "label": "Grande phrase", "type": "text", "maxLength": 80, "help": "L'invitation à vous écrire, à côté du formulaire." },
+        { "key": "text", "label": "Texte", "type": "textarea", "maxLength": 300, "help": "Une ou deux phrases : ce que vos clients doivent vous dire, et sous quel délai vous répondez." }
+      ]
+    },
+    {
       "key": "nav",
       "label": "Menu",
       "fields": [
