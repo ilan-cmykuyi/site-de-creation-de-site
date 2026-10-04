@@ -5,6 +5,20 @@
     "subtitle": "Un site professionnel livré clé en main, que vous modifiez vous-même, et des demandes de contact qui ne se perdent plus.",
     "ctaLabel": "Demander un devis"
   },
+  "realisations": {
+    "eyebrow": "Exemples de maquettes",
+    "title": "Chaque métier a son site. Voici à quoi le vôtre peut ressembler.",
+    "allLabel": "Tout",
+    "exampleBadge": "Exemple de maquette",
+    "items": [
+      { "name": "Plombier", "category": "Dépannage", "color": "Jaune", "isExample": true, "link": "" },
+      { "name": "Électricien", "category": "Dépannage", "color": "Noir", "isExample": true, "link": "" },
+      { "name": "Menuisier", "category": "Rénovation", "color": "Sable", "isExample": true, "link": "" },
+      { "name": "Carreleur", "category": "Rénovation", "color": "Orange brûlé", "isExample": true, "link": "" },
+      { "name": "Couvreur", "category": "Extérieur", "color": "Vert profond", "isExample": true, "link": "" },
+      { "name": "Paysagiste", "category": "Extérieur", "color": "Jaune", "isExample": true, "link": "" }
+    ]
+  },
   "testimonials": {
     "items": [
       { "name": "Prénom N.", "quote": "Votre témoignage client" },

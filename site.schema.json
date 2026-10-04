@@ -17,6 +17,31 @@
       ]
     },
     {
+      "key": "realisations",
+      "label": "Exemples et réalisations",
+      "fields": [
+        { "key": "eyebrow", "label": "Étiquette de la section", "type": "text", "maxLength": 40, "help": "Le petit mot en capitales posé au-dessus de la section, par exemple « Exemples de maquettes » ou « Réalisations »." },
+        { "key": "title", "label": "Grande phrase", "type": "text", "maxLength": 120, "help": "La phrase qui présente vos exemples ou vos réalisations, en grand." },
+        { "key": "allLabel", "label": "Filtre « tout voir »", "type": "text", "required": true, "maxLength": 20, "help": "Le premier filtre au-dessus des cartes, qui les montre toutes. Les autres filtres reprennent les catégories des cartes." },
+        { "key": "exampleBadge", "label": "Mention « exemple »", "type": "text", "maxLength": 30, "help": "Posée sur chaque carte cochée « C'est un exemple », pour qu'aucun visiteur ne la prenne pour un vrai client." },
+        {
+          "key": "items",
+          "label": "Cartes",
+          "type": "list",
+          "max": 12,
+          "help": "Douze cartes au plus, affichées dans cet ordre, sur deux colonnes.",
+          "fields": [
+            { "key": "name", "label": "Nom du métier ou du projet", "type": "text", "required": true, "maxLength": 40, "help": "Écrit en très grand sur la carte quand elle n'a pas de photo, et repris dessous." },
+            { "key": "category", "label": "Catégorie", "type": "text", "maxLength": 30, "help": "Petit mot sous le nom, qui sert aussi de filtre. Écrivez-la exactement de la même façon sur les cartes à regrouper." },
+            { "key": "color", "label": "Couleur de la carte", "type": "select", "options": ["Jaune", "Noir", "Orange brûlé", "Sable", "Vert profond"], "help": "Le fond de la carte quand elle n'a pas de photo." },
+            { "key": "isExample", "label": "C'est un exemple", "type": "boolean", "help": "Cochez tant que la carte montre une maquette et non un vrai client : la mention « exemple » s'affiche dessus." },
+            { "key": "image", "label": "Photo ou capture du site (facultatif)", "type": "image", "help": "Remplace l'aplat de couleur. Format paysage 4:3, 1600 px de large au minimum." },
+            { "key": "link", "label": "Lien (facultatif)", "type": "url", "help": "Adresse du site réalisé, ouverte dans un nouvel onglet. Elle commence par https://" }
+          ]
+        }
+      ]
+    },
+    {
       "key": "testimonials",
       "label": "Témoignages",
       "fields": [
