@@ -33,20 +33,57 @@ sont dans `CLAUDE.md`.
 
 ## Démarrer un nouveau site
 
-1. Cloner ce dépôt sous le nom du client (ou « Use this template » sur
-   GitHub), puis `npm install`.
-2. Copier `.env.example` en `.env` et y coller le jeton public du site
-   (imprimé par `npm run site:provision` côté CRM, ou visible dans Lea CRM,
-   Réglages du site > Jetons d'accès). `.env` n'est jamais commité.
-3. Briefer Claude Code : le métier du client, les sections voulues, le ton.
+Un nouveau site se démarre depuis le dépôt Lea CRM, en une commande.
+Remplacer chaque `<...>` par la vraie valeur du client : une valeur
+d'exemple (« Nom du client », une adresse ou un domaine en `exemple` ou
+`example`) est refusée.
+
+```bash
+npm run site:new -- --slug=<slug> --name="<nom du client>" --owner-email=<adresse du propriétaire> --dry-run
+npm run site:new -- --slug=<slug> --name="<nom du client>" --owner-email=<adresse du propriétaire> [--domain=<domaine définitif>]
+```
+
+La commande crée le dépôt privé `ilan-cmykuyi/site-<slug>` depuis ce
+modèle, le clone en HTTPS dans `/Users/ilan/sites/<slug>` et installe les
+dépendances, remplit le bloc `site` de `site.schema.json` (nom, slug
+`principal`, domaines : le domaine définitif s'il est donné, puis
+`site-<slug>.pages.dev` ; deux lignes changées, le reste du fichier
+intact), branche le site en production (tenant, site, contenu de départ
+`content.seed.json`), écrit `.env`, lance `npm run build`, commite
+« Configuration initiale du site » et pousse, puis crée le projet
+Cloudflare Pages (hook de déploiement, alerte, mise en ligne sur
+`https://site-<slug>.pages.dev/`, ou le sous-domaine attribué par
+Cloudflare, donné par le bilan de `site:new`). Son bilan donne l'adresse du site,
+l'identifiant de connexion du client et, une seule fois, son mot de passe.
+Relancée après un échec, elle reprend là où elle s'était arrêtée ;
+`--dry-run` imprime le plan sans rien écrire. Détails et prérequis
+(compte `gh` actif `ilan-cmykuyi`, `railway link`, jeton Cloudflare) :
+`docs/sites/README.md` du dépôt CRM, « Créer un site en une commande ».
+
+Ensuite, dans `/Users/ilan/sites/<slug>` :
+
+1. Briefer Claude Code : le métier du client, les sections voulues, le ton.
    Il lit `CLAUDE.md`, écrit les composants dans `src/sections/`, déclare les
-   sections dans `site.schema.json` et adapte `content.seed.json` (valeurs de
-   départ, dont l'identité légale du client) pour le CRM.
-4. `npm run check` : typage, ESLint (aucun texte en dur dans un composant),
+   sections dans `site.schema.json` et leurs valeurs de départ dans
+   `content.seed.json`.
+2. `npm run check` : typage, ESLint (aucun texte en dur dans un composant),
    cohérence entre les composants et `site.schema.json`, et tests.
-5. `npm run dev` pour travailler, `npm run build` puis `npm run preview` pour
+3. `npm run dev` pour travailler, `npm run build` puis `npm run preview` pour
    vérifier le résultat construit.
-6. Brancher le site côté CRM, puis déployer (sections suivantes).
+4. Brancher les sections nouvelles côté CRM en relançant
+   `npm run site:provision:prod` (voir « Branchement côté CRM »), puis
+   commit et push : Cloudflare Pages reconstruit le site.
+5. Le contenu réel du client (textes, images, coordonnées, mentions légales)
+   se saisit dans Lea CRM : le site part des valeurs d'exemple de
+   `content.seed.json`, et une relance du branchement ne remplace jamais une
+   valeur déjà en base.
+6. Le DNS du domaine définitif (voir « DNS »).
+
+Sans la commande, à la main : « Use this template » sur GitHub, clone,
+`npm install`, `.env` copié de `.env.example` avec le jeton public du site
+(imprimé par `npm run site:provision` côté CRM, ou visible dans Lea CRM,
+Réglages du site > Jetons d'accès ; `.env` n'est jamais commité), puis
+« Branchement côté CRM » et « Déploiement ».
 
 Exemple prêt à l'emploi : le site de démonstration Booster, jeton public
 `taqhIyF5qe3bWN6bKy0MRuyIwc9KUzGXpeFHog_rBPY` (lecture seule, contenu de

@@ -6,6 +6,33 @@ l'exécution depuis l'API publique de Lea CRM (module « Mon site »). Lire le
 README avant d'écrire le premier composant. Les règles ci-dessous s'appliquent
 à tout site dérivé, sans exception.
 
+## Démarrer un nouveau site
+
+Un site dérivé naît d'une commande du dépôt Lea CRM, pas à la main :
+`npm run site:new -- --slug=<slug> --name="<nom du client>" --owner-email=<adresse du propriétaire> [--domain=<domaine définitif>]`
+(README, « Démarrer un nouveau site »). Quand Claude Code arrive dans
+`/Users/ilan/sites/<slug>`, c'est déjà fait :
+
+- dépôt privé `ilan-cmykuyi/site-<slug>` créé depuis ce modèle, cloné en
+  HTTPS, dépendances installées ;
+- bloc `site` de `site.schema.json` rempli (nom, slug `principal`,
+  domaines) : ne pas le réécrire, nom et domaines se changent ensuite dans
+  Lea CRM, Réglages du site ;
+- site branché en production avec les sections du modèle et les valeurs
+  d'exemple de `content.seed.json` ; `.env` porte le jeton public (jamais
+  commité) ;
+- commit « Configuration initiale du site » poussé, site en ligne sur
+  `https://site-<slug>.pages.dev/` (ou le sous-domaine attribué par
+  Cloudflare, donné par le bilan de `site:new`), reconstruit par Cloudflare
+  Pages à chaque push sur `main` et à chaque publication depuis Lea CRM.
+
+Reste le travail de ce dépôt : les sections propres au client (règles
+ci-dessous, trois endroits dans le même commit), branchées ensuite en
+relançant `npm run site:provision:prod` côté CRM (README, « Branchement
+côté CRM »). Une valeur déjà en base n'est jamais remplacée par
+`content.seed.json` : les valeurs d'exemple déjà branchées (bandeau, pied de
+page, mentions légales) se corrigent dans Lea CRM, pas dans le seed.
+
 ## Le contenu vient du CRM, jamais du code
 
 - **Tout texte et toute image que le client peut vouloir changer** vient d'une
@@ -69,7 +96,9 @@ pages est du code, leurs libellés sont du contenu.
   sociaux, mention de copyright) par les siennes, compléter `legalBody` des
   mentions propres à une société (capital social, immatriculation, numéro de
   TVA intracommunautaire) et adapter `hostingProvider` si le site n'est pas
-  servi par Cloudflare Pages.
+  servi par Cloudflare Pages. Un site démarré par `npm run site:new` est
+  branché d'emblée avec ces valeurs d'exemple : elles se corrigent alors
+  dans Lea CRM (voir « Démarrer un nouveau site »).
 
 ## Neuf types de champs, pas un de plus
 

@@ -160,3 +160,33 @@ describe("SiteHead et StructuredData au rendu serveur", () => {
     expect(head).not.toContain("og:url");
   });
 });
+
+describe("SiteHead : suffixe des titres (settings.seo.titleSuffix)", () => {
+  const SITE_NAME = "Menuiserie Durand";
+  const NAMED: UseSiteContentResult = { ...CONTEXT, content: { ...CONTENT, site: { ...CONTENT.site, name: SITE_NAME } } };
+  /** Titre et og:title prérendus d'une page de titre `title` (l'accueil passe le nom du site), site « Menuiserie Durand ». */
+  const titles = (title: string, settings: SiteSettings) =>
+    prerenderedHead(title === SITE_NAME ? "/" : BLOG_PATH, <SiteHead title={title} settings={settings} />, NAMED)
+      .split("\n")
+      .filter((line) => line.startsWith("<title>") || line.includes('property="og:title"'));
+  const both = (text: string) => [`<title>${text}</title>`, `<meta property="og:title" content="${text}">`];
+
+  it("absent, page Blog : « Blog | <nom du site> », jamais le suffixe d'un autre site", () => {
+    expect(titles(BLOG_TITLE, { seo: { defaultDescription: "Menuiserie sur mesure." } })).toStrictEqual(both("Blog | Menuiserie Durand"));
+    expect(titles(BLOG_TITLE, {})).toStrictEqual(both("Blog | Menuiserie Durand"));
+  });
+
+  it("absent, accueil (titre = nom du site) : le nom seul, jamais « Nom | Nom »", () => {
+    expect(titles(SITE_NAME, {})).toStrictEqual(both("Menuiserie Durand"));
+  });
+
+  it("présent : tel quel, accueil compris", () => {
+    expect(titles(BLOG_TITLE, { seo: { titleSuffix: " | Menuiserie à Lyon" } })).toStrictEqual(both("Blog | Menuiserie à Lyon"));
+    expect(titles(SITE_NAME, { seo: { titleSuffix: " | Menuiserie à Lyon" } })).toStrictEqual(both("Menuiserie Durand | Menuiserie à Lyon"));
+  });
+
+  it("chaîne vide : aucun suffixe, la valeur explicite est respectée", () => {
+    expect(titles(BLOG_TITLE, { seo: { titleSuffix: "" } })).toStrictEqual(both("Blog"));
+    expect(titles(SITE_NAME, { seo: { titleSuffix: "" } })).toStrictEqual(both("Menuiserie Durand"));
+  });
+});

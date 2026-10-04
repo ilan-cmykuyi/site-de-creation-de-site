@@ -4,9 +4,6 @@
     "slug": "principal",
     "domains": ["site-de-creation-de-site.pages.dev"]
   },
-  "settings": {
-    "seo": { "titleSuffix": " | Plomberie Martin" }
-  },
   "sections": [
     {
       "key": "hero",

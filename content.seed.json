@@ -1,13 +1,13 @@
 {
   "hero": {
-    "title": "Plomberie Martin, dépannage 7j/7",
-    "subtitle": "Intervention en moins d'une heure sur Lyon et sa périphérie.",
+    "title": "Votre titre principal",
+    "subtitle": "Une phrase qui présente votre activité, ce que vous proposez et où vous intervenez.",
     "ctaLabel": "Demander un devis"
   },
   "testimonials": {
     "items": [
-      { "name": "Claire M.", "quote": "Rapide et soigné, je recommande." },
-      { "name": "Julien B.", "quote": "Intervention efficace, tarif honnête." }
+      { "name": "Prénom N.", "quote": "Votre témoignage client" },
+      { "name": "Prénom N.", "quote": "Votre témoignage client" }
     ]
   },
   "nav": {

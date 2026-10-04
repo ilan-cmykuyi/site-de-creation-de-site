@@ -9,7 +9,12 @@ import type { PublicImage, SiteSettings } from "../types/site-content";
 import { ui } from "../ui-strings";
 
 type SiteHeadProps = {
-  /** Titre de la page, SANS le suffixe : settings.seo.titleSuffix est ajouté ici. */
+  /**
+   * Titre de la page, SANS le suffixe, ajouté ici : settings.seo.titleSuffix
+   * (Lea CRM, Réglages du site > Référencement), tel quel, même vide ; absent,
+   * « | <nom du site> », sauf quand ce titre EST le nom du site (l'accueil),
+   * qui reste seul.
+   */
   title: string;
   description?: string;
   /**
@@ -60,7 +65,10 @@ function pageUrlWithoutDomain(pathname: string): string {
 export function SiteHead({ title, description, image, settings, noindex = false }: SiteHeadProps) {
   const { site, browserStateApplied } = useSiteMeta();
   const { pathname } = useLocation();
-  const fullTitle = `${title}${settings.seo?.titleSuffix ?? ""}`;
+  // Suffixe explicite (même vide) : tel quel. Absent : le nom du site, sauf
+  // pour une page dont le titre est déjà ce nom (l'accueil), jamais « Nom | Nom ».
+  const titleSuffix = settings.seo?.titleSuffix ?? (title === site.name ? "" : ` | ${site.name}`);
+  const fullTitle = `${title}${titleSuffix}`;
   const desc = description ?? settings.seo?.defaultDescription ?? "";
   const shareImage = image ?? settings.seo?.ogImage;
   const imageUrl = shareImage?.url;
