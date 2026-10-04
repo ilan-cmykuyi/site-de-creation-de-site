@@ -1,14 +1,226 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
-/* Styles de base du site. Le thème (couleurs, police) se règle ici avec @theme,
-   voir https://tailwindcss.com/docs/theme */
+/* Polices auto-hébergées (public/fonts/, licence SIL OFL 1.1 jointe).
+   - Instrument Sans : tout le texte. Fichiers variables (graisses 400 à 700),
+     découpés par alphabet : le navigateur ne charge que ce que la page affiche.
+   - Archivo Expanded Black : le nom géant de l'accueil, les noms sur les
+     cartes d'exemples, les numéros d'étapes. Instance statique d'Archivo
+     (largeur 125 %, graisse 900), dont les chasses sont reprises dans
+     src/lib/fit-text.ts : changer ce fichier impose de les recalculer.
+     `block` : jamais de nom géant dans une police de repli, aux chasses
+     différentes, le temps que 14 Ko arrivent. */
+@font-face {
+  font-family: "Instrument Sans";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("/fonts/instrument-sans-latin-wght-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Instrument Sans";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("/fonts/instrument-sans-latin-ext-wght-normal.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Instrument Sans";
+  font-style: italic;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("/fonts/instrument-sans-latin-wght-italic.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Instrument Sans";
+  font-style: italic;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("/fonts/instrument-sans-latin-ext-wght-italic.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Archivo Expanded";
+  font-style: normal;
+  font-weight: 900;
+  font-display: block;
+  src: url("/fonts/archivo-expanded-black-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Archivo Expanded";
+  font-style: normal;
+  font-weight: 900;
+  font-display: block;
+  src: url("/fonts/archivo-expanded-black-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* Jetons du site : fond blanc, encre presque noire, gris clair des pastilles,
+   et les cinq aplats des cartes d'exemples (liste fermée du champ « Couleur »,
+   site.schema.json, voir src/lib/aplats.ts). Aucun dégradé, aucune ombre. */
+@theme {
+  --font-sans: "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Archivo Expanded", "Arial Black", ui-sans-serif, sans-serif;
+
+  --color-ink: #070708;
+  --color-paper: #ffffff;
+  --color-pill: #ececec;
+  --color-mist: #f4f4f4;
+  --color-muted: #5c5c63;
+  --color-rule: #07070826;
+  --color-error: #b42318;
+
+  --color-jaune: #ffd60a;
+  --color-orange: #c2410c;
+  --color-sable: #e7dcc8;
+  --color-vert: #0e3b2e;
+}
+
+/* Petites capitales espacées : menu, étiquettes de section, catégories. */
+@utility caps {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* Pastille : liens du menu, filtres, petits boutons. Gris clair ; ajouter
+   `pill-ink` pour la version noire. */
+@utility pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  min-height: 32px;
+  padding-inline: 14px;
+  border-radius: 9999px;
+  background-color: var(--color-pill);
+  color: var(--color-ink);
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition:
+    background-color 160ms ease,
+    color 160ms ease;
+  @media (hover: hover) {
+    &:hover {
+      background-color: #dedede;
+    }
+  }
+}
+@utility pill-ink {
+  background-color: var(--color-ink);
+  color: var(--color-paper);
+  @media (hover: hover) {
+    &:hover {
+      background-color: #2a2a2e;
+    }
+  }
+}
+
+/* Grand bouton en pastille (appels à l'action des sections), noir ; ajouter
+   `button-light` pour la version claire, sur fond noir. */
+@utility button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75em;
+  min-height: 52px;
+  padding-inline: 26px;
+  border-radius: 9999px;
+  background-color: var(--color-ink);
+  color: var(--color-paper);
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 500;
+  transition: background-color 160ms ease;
+  @media (hover: hover) {
+    &:hover {
+      background-color: #2a2a2e;
+    }
+  }
+}
+@utility button-light {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  @media (hover: hover) {
+    &:hover {
+      background-color: var(--color-pill);
+    }
+  }
+}
+
 html {
-  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 body {
-  @apply bg-white text-slate-900 antialiased;
+  @apply bg-paper font-sans text-ink antialiased;
+}
+
+::selection {
+  background-color: var(--color-jaune);
+  color: var(--color-ink);
+}
+
+:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
+/* Texte calé sur la largeur de son conteneur (src/components/FitText.tsx) :
+   corps calculé par src/lib/fit-text.ts à partir des chasses d'Archivo
+   Expanded Black, en unités de conteneur (cqw). Approche et crénage
+   désactivés : la largeur affichée est exactement celle du calcul. */
+.fit-box {
+  container-type: inline-size;
+}
+.fit-text {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-kerning: none;
+  font-synthesis: none;
+  letter-spacing: 0;
+  text-transform: none;
+  white-space: nowrap;
+}
+
+/* Apparition douce au défilement, en CSS seulement : aucun JavaScript, donc
+   rien qui diffère entre le HTML prérendu et l'hydratation. Navigateur sans
+   animations liées au défilement, ou mouvement réduit demandé : le contenu
+   est simplement là. */
+@keyframes reveal-in {
+  from {
+    opacity: 0;
+    translate: 0 28px;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .reveal {
+      animation: reveal-in linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 180px;
+    }
+  }
 }
 
 /* Page prérendue plus ancienne que le cache du navigateur : masquée le temps
