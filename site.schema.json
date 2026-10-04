@@ -124,15 +124,18 @@
       "key": "testimonials",
       "label": "Témoignages",
       "fields": [
+        { "key": "eyebrow", "label": "Étiquette de la section", "type": "text", "maxLength": 40, "help": "Le petit mot en capitales posé au-dessus de la section." },
+        { "key": "title", "label": "Grande phrase", "type": "text", "maxLength": 120, "help": "La phrase qui présente les témoignages." },
         {
           "key": "items",
           "label": "Témoignages",
           "type": "list",
           "max": 12,
+          "help": "La section reste masquée tant qu'aucun témoignage n'est saisi. N'ajoutez que de vrais témoignages, avec l'accord de leurs auteurs.",
           "fields": [
-            { "key": "name", "label": "Nom", "type": "text", "required": true },
-            { "key": "quote", "label": "Témoignage", "type": "textarea", "required": true },
-            { "key": "photo", "label": "Photo", "type": "image" }
+            { "key": "name", "label": "Nom", "type": "text", "required": true, "maxLength": 60, "help": "Prénom et initiale du nom, ou nom de l'entreprise, avec l'accord de la personne." },
+            { "key": "quote", "label": "Témoignage", "type": "textarea", "required": true, "maxLength": 400, "help": "Les mots du client, sans les arranger. Les guillemets sont ajoutés automatiquement." },
+            { "key": "photo", "label": "Photo (facultative)", "type": "image", "help": "Portrait ou logo, carré de préférence." }
           ]
         }
       ]

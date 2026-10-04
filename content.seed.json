@@ -112,10 +112,9 @@
     ]
   },
   "testimonials": {
-    "items": [
-      { "name": "Prénom N.", "quote": "Votre témoignage client" },
-      { "name": "Prénom N.", "quote": "Votre témoignage client" }
-    ]
+    "eyebrow": "Témoignages",
+    "title": "Ce que nos clients en disent.",
+    "items": []
   },
   "nav": {
     "announcement": "Votre site, vos textes, vos photos : vous gardez la main.",

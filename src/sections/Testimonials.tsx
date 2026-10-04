@@ -1,34 +1,43 @@
 // src/sections/Testimonials.tsx
 //
-// Section « testimonials » de site.schema.json : items[name, quote, photo].
-// Le schéma n'a pas de titre de section : en ajouter un = un champ `title`
-// dans site.schema.json (côté CRM et ici), jamais un texte en dur.
+// Section « testimonials » de site.schema.json : eyebrow, title et
+// items[name, quote, photo]. Vide au départ : la section n'est pas rendue
+// tant qu'aucun témoignage complet (nom et texte) n'est saisi dans Lea CRM.
+// Jamais de témoignage inventé dans content.seed.json.
 import { ResponsiveImage } from "../components/ResponsiveImage";
+import { Section, SectionTitle } from "../components/Section";
 import { useSection } from "../hooks/site-content-context";
 import type { PublicImage } from "../types/site-content";
+import { ui } from "../ui-strings";
 
-type Testimonial = { name: string; quote: string; photo: PublicImage | null };
-type Testimonials = { items: Testimonial[] };
+type Testimonial = { name?: string; quote?: string; photo?: PublicImage | null };
+type Testimonials = { eyebrow?: string; title?: string; items?: Testimonial[] };
 
 export function Testimonials() {
-  const { items } = useSection<Testimonials>("testimonials");
-  if (!items || items.length === 0) return null;
+  const { eyebrow, title, items } = useSection<Testimonials>("testimonials");
+  const list = (items ?? []).filter((item) => item.name?.trim() && item.quote?.trim());
+  if (list.length === 0) return null;
 
   return (
-    <section className="bg-slate-50 py-16">
-      <ul className="mx-auto grid max-w-5xl gap-6 px-4 sm:grid-cols-2">
-        {items.map((item, i) => (
+    <Section eyebrow={eyebrow}>
+      <SectionTitle>{title}</SectionTitle>
+      <ul className="mt-12 grid gap-x-6 gap-y-12 md:mt-20 md:grid-cols-2 lg:gap-x-8">
+        {list.map((item, i) => (
           // Pas d'identifiant stable dans un élément de liste (schéma des
           // champs) : l'index est le seul choix raisonnable ici.
-          <li key={i} className="rounded-lg bg-white p-6 shadow-sm">
-            <blockquote className="text-slate-700">{item.quote}</blockquote>
-            <div className="mt-4 flex items-center gap-3">
-              <ResponsiveImage image={item.photo} sizes="40px" loading="lazy" className="h-10 w-10 rounded-full object-cover" />
-              <p className="text-sm font-medium text-slate-900">{item.name}</p>
-            </div>
+          <li key={i} className="reveal border-t border-ink pt-6">
+            <figure>
+              <blockquote className="text-[22px] leading-[1.3] font-medium tracking-[-0.015em] text-pretty md:text-[26px] lg:text-[30px]">
+                {ui.testimonials.quote(item.quote ?? "")}
+              </blockquote>
+              <figcaption className="mt-6 flex items-center gap-3">
+                <ResponsiveImage image={item.photo ?? null} sizes="40px" loading="lazy" className="size-10 rounded-full object-cover" />
+                <span className="caps text-muted">{item.name}</span>
+              </figcaption>
+            </figure>
           </li>
         ))}
       </ul>
-    </section>
+    </Section>
   );
 }

@@ -24,6 +24,10 @@ export const ui = {
     menu: "Menu",
     close: "Fermer",
   },
+  testimonials: {
+    /** Un témoignage entre guillemets français, espaces insécables comprises. */
+    quote: (text: string) => `«\u00a0${text.trim()}\u00a0»`,
+  },
   blog: {
     empty: "Aucun article pour l'instant.",
     loading: "Chargement de l'article…",
