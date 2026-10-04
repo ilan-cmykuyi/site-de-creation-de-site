@@ -17,7 +17,7 @@ export const ui = {
   /** Fuseau des dates affichées (Intl), le même au prérendu et dans le navigateur : voir lib/format.ts. */
   timeZone: "Europe/Paris",
   preview: {
-    badge: "Aperçu du brouillon : ce que vous voyez n'est pas encore publié.",
+    badge: "Aperçu du brouillon\u00a0: ce que vous voyez n’est pas encore publié.",
   },
   nav: {
     /** Bouton du menu sur téléphone, menu fermé puis ouvert. */
@@ -29,8 +29,8 @@ export const ui = {
     quote: (text: string) => `«\u00a0${text.trim()}\u00a0»`,
   },
   blog: {
-    empty: "Aucun article pour l'instant.",
-    loading: "Chargement de l'article…",
+    empty: "Aucun article pour l’instant.",
+    loading: "Chargement de l’article…",
     unavailable: "Cet article est introuvable ou temporairement indisponible.",
     /** Titre de la page (onglet) quand l'article est introuvable ou indisponible ; la page est alors en noindex. */
     unavailableTitle: "Article indisponible",
@@ -54,7 +54,7 @@ export const ui = {
     error: "Une erreur est survenue, réessayez.",
   },
   consent: {
-    text: "Ce site utilise des outils de mesure d'audience, uniquement si vous l'acceptez.",
+    text: "Ce site utilise des outils de mesure d’audience, uniquement si vous l’acceptez.",
     accept: "Accepter",
     refuse: "Refuser",
   },
@@ -67,7 +67,7 @@ export const ui = {
   },
   notFound: {
     title: "Page introuvable",
-    text: "Cette page n'existe pas ou n'existe plus.",
+    text: "Cette page n’existe pas ou n’existe plus.",
     /** Lien vers l'accueil ; `label` = libellé de l'accueil dans le menu (nav.homeLabel), sinon le nom du site. */
     back: (label: string) => `← ${label}`,
   },

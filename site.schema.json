@@ -7,23 +7,23 @@
   "sections": [
     {
       "key": "hero",
-      "label": "Bandeau d'accueil",
+      "label": "Bandeau d’accueil",
       "fields": [
-        { "key": "wordmark", "label": "Nom géant", "type": "text", "maxLength": 16, "help": "Le nom affiché en très grandes lettres, sur toute la largeur, en haut de l'accueil. Un mot court rend le mieux : plus il est long, plus les lettres sont petites. Laissé vide, le nom du site est affiché." },
-        { "key": "title", "label": "Accroche", "type": "text", "required": true, "maxLength": 80, "help": "La phrase principale de l'accueil : ce que vous faites et pour qui. C'est aussi ce que Google lit en premier." },
-        { "key": "subtitle", "label": "Sous-titre", "type": "textarea", "maxLength": 200, "help": "Une ou deux phrases qui complètent l'accroche." },
+        { "key": "wordmark", "label": "Nom géant", "type": "text", "maxLength": 16, "help": "Le nom affiché en très grandes lettres, sur toute la largeur, en haut de l’accueil. Un mot court rend le mieux\u00a0: plus il est long, plus les lettres sont petites. Laissé vide, le nom du site est affiché." },
+        { "key": "title", "label": "Accroche", "type": "text", "required": true, "maxLength": 80, "help": "La phrase principale de l’accueil\u00a0: ce que vous faites et pour qui. C’est aussi ce que Google lit en premier." },
+        { "key": "subtitle", "label": "Sous-titre", "type": "textarea", "maxLength": 200, "help": "Une ou deux phrases qui complètent l’accroche." },
         { "key": "ctaLabel", "label": "Texte du bouton", "type": "text", "maxLength": 30, "help": "Le bouton mène au formulaire de contact. Laissez vide pour le masquer." },
-        { "key": "image", "label": "Visuel large (facultatif)", "type": "image", "help": "Affiché sur toute la largeur, sous l'accroche. Format paysage, 2000 px de large au minimum. Sans image, rien ne s'affiche à cet endroit." }
+        { "key": "image", "label": "Visuel large (facultatif)", "type": "image", "help": "Affiché sur toute la largeur, sous l’accroche. Format paysage, 2000 px de large au minimum. Sans image, rien ne s’affiche à cet endroit." }
       ]
     },
     {
       "key": "realisations",
       "label": "Exemples et réalisations",
       "fields": [
-        { "key": "eyebrow", "label": "Étiquette de la section", "type": "text", "maxLength": 40, "help": "Le petit mot en capitales posé au-dessus de la section, par exemple « Exemples de maquettes » ou « Réalisations »." },
+        { "key": "eyebrow", "label": "Étiquette de la section", "type": "text", "maxLength": 40, "help": "Le petit mot en capitales posé au-dessus de la section, par exemple «\u00a0Exemples de maquettes\u00a0» ou «\u00a0Réalisations\u00a0»." },
         { "key": "title", "label": "Grande phrase", "type": "text", "maxLength": 120, "help": "La phrase qui présente vos exemples ou vos réalisations, en grand." },
-        { "key": "allLabel", "label": "Filtre « tout voir »", "type": "text", "required": true, "maxLength": 20, "help": "Le premier filtre au-dessus des cartes, qui les montre toutes. Les autres filtres reprennent les catégories des cartes." },
-        { "key": "exampleBadge", "label": "Mention « exemple »", "type": "text", "maxLength": 30, "help": "Posée sur chaque carte cochée « C'est un exemple », pour qu'aucun visiteur ne la prenne pour un vrai client." },
+        { "key": "allLabel", "label": "Filtre «\u00a0tout voir\u00a0»", "type": "text", "required": true, "maxLength": 20, "help": "Le premier filtre au-dessus des cartes, qui les montre toutes. Les autres filtres reprennent les catégories des cartes." },
+        { "key": "exampleBadge", "label": "Mention «\u00a0exemple\u00a0»", "type": "text", "maxLength": 30, "help": "Posée sur chaque carte cochée «\u00a0C’est un exemple\u00a0», pour qu’aucun visiteur ne la prenne pour un vrai client." },
         {
           "key": "items",
           "label": "Cartes",
@@ -31,11 +31,11 @@
           "max": 12,
           "help": "Douze cartes au plus, affichées dans cet ordre, sur deux colonnes.",
           "fields": [
-            { "key": "name", "label": "Nom du métier ou du projet", "type": "text", "required": true, "maxLength": 40, "help": "Écrit en très grand sur la carte quand elle n'a pas de photo, et repris dessous." },
+            { "key": "name", "label": "Nom du métier ou du projet", "type": "text", "required": true, "maxLength": 40, "help": "Écrit en très grand sur la carte quand elle n’a pas de photo, et repris dessous." },
             { "key": "category", "label": "Catégorie", "type": "text", "maxLength": 30, "help": "Petit mot sous le nom, qui sert aussi de filtre. Écrivez-la exactement de la même façon sur les cartes à regrouper." },
-            { "key": "color", "label": "Couleur de la carte", "type": "select", "options": ["Jaune", "Noir", "Orange brûlé", "Sable", "Vert profond"], "help": "Le fond de la carte quand elle n'a pas de photo." },
-            { "key": "isExample", "label": "C'est un exemple", "type": "boolean", "help": "Cochez tant que la carte montre une maquette et non un vrai client : la mention « exemple » s'affiche dessus." },
-            { "key": "image", "label": "Photo ou capture du site (facultatif)", "type": "image", "help": "Remplace l'aplat de couleur. Format paysage 4:3, 1600 px de large au minimum." },
+            { "key": "color", "label": "Couleur de la carte", "type": "select", "options": ["Jaune", "Noir", "Orange brûlé", "Sable", "Vert profond"], "help": "Le fond de la carte quand elle n’a pas de photo." },
+            { "key": "isExample", "label": "C’est un exemple", "type": "boolean", "help": "Cochez tant que la carte montre une maquette et non un vrai client\u00a0: la mention «\u00a0exemple\u00a0» s’affiche dessus." },
+            { "key": "image", "label": "Photo ou capture du site (facultatif)", "type": "image", "help": "Remplace l’aplat de couleur. Format paysage 4:3, 1600 px de large au minimum." },
             { "key": "link", "label": "Lien (facultatif)", "type": "url", "help": "Adresse du site réalisé, ouverte dans un nouvel onglet. Elle commence par https://" }
           ]
         }
@@ -46,7 +46,7 @@
       "label": "Métiers",
       "fields": [
         { "key": "eyebrow", "label": "Étiquette de la section", "type": "text", "maxLength": 40, "help": "Le petit mot en capitales posé au-dessus de la section." },
-        { "key": "title", "label": "Grande phrase (facultative)", "type": "text", "maxLength": 120, "help": "Une phrase avant la liste des métiers. Laissez vide pour n'afficher que la liste." },
+        { "key": "title", "label": "Grande phrase (facultative)", "type": "text", "maxLength": 120, "help": "Une phrase avant la liste des métiers. Laissez vide pour n’afficher que la liste." },
         {
           "key": "items",
           "label": "Métiers",
@@ -54,7 +54,7 @@
           "max": 16,
           "help": "Les métiers que vous servez, affichés en grand, à la suite, dans cet ordre.",
           "fields": [
-            { "key": "name", "label": "Métier", "type": "text", "required": true, "maxLength": 30, "help": "En un ou deux mots, par exemple « Plombiers »." }
+            { "key": "name", "label": "Métier", "type": "text", "required": true, "maxLength": 30, "help": "En un ou deux mots, par exemple «\u00a0Plombiers\u00a0»." }
           ]
         }
       ]
@@ -70,10 +70,10 @@
           "label": "Prestations",
           "type": "list",
           "max": 4,
-          "help": "Trois ou quatre prestations, dans l'ordre où vous voulez les mettre en avant.",
+          "help": "Trois ou quatre prestations, dans l’ordre où vous voulez les mettre en avant.",
           "fields": [
-            { "key": "title", "label": "Titre", "type": "text", "required": true, "maxLength": 60, "help": "Quelques mots, par exemple « Hébergement compris »." },
-            { "key": "text", "label": "Texte", "type": "textarea", "maxLength": 200, "help": "Deux lignes environ : ce que cela change pour votre client." }
+            { "key": "title", "label": "Titre", "type": "text", "required": true, "maxLength": 60, "help": "Quelques mots, par exemple «\u00a0Hébergement compris\u00a0»." },
+            { "key": "text", "label": "Texte", "type": "textarea", "maxLength": 200, "help": "Deux lignes environ\u00a0: ce que cela change pour votre client." }
           ]
         }
       ]
@@ -89,10 +89,10 @@
           "label": "Étapes",
           "type": "list",
           "max": 8,
-          "help": "De la première discussion à la mise en ligne, dans l'ordre. Les numéros s'affichent tout seuls.",
+          "help": "De la première discussion à la mise en ligne, dans l’ordre. Les numéros s’affichent tout seuls.",
           "fields": [
-            { "key": "title", "label": "Titre de l'étape", "type": "text", "required": true, "maxLength": 50, "help": "Quelques mots, par exemple « Mise en ligne »." },
-            { "key": "text", "label": "Texte", "type": "textarea", "maxLength": 220, "help": "Une ou deux phrases : ce qui se passe à cette étape, et ce que vous attendez de votre client." }
+            { "key": "title", "label": "Titre de l’étape", "type": "text", "required": true, "maxLength": 50, "help": "Quelques mots, par exemple «\u00a0Mise en ligne\u00a0»." },
+            { "key": "text", "label": "Texte", "type": "textarea", "maxLength": 220, "help": "Une ou deux phrases\u00a0: ce qui se passe à cette étape, et ce que vous attendez de votre client." }
           ]
         }
       ]
@@ -110,10 +110,10 @@
           "max": 4,
           "help": "Quatre offres au plus, côte à côte sur grand écran.",
           "fields": [
-            { "key": "name", "label": "Nom de l'offre", "type": "text", "required": true, "maxLength": 40, "help": "Court et parlant, par exemple « Premier site »." },
-            { "key": "audience", "label": "À qui elle s'adresse", "type": "textarea", "maxLength": 160, "help": "Une phrase : pour quel artisan, dans quelle situation." },
-            { "key": "includes", "label": "Ce qu'elle comprend", "type": "textarea", "maxLength": 500, "help": "Un élément par ligne : passez à la ligne entre deux éléments. Quatre à six lignes courtes se lisent le mieux." },
-            { "key": "price", "label": "Prix", "type": "text", "maxLength": 60, "help": "En texte libre, par exemple « À partir de … € HT » ou « Sur devis ». Précisez HT ou TTC." },
+            { "key": "name", "label": "Nom de l’offre", "type": "text", "required": true, "maxLength": 40, "help": "Court et parlant, par exemple «\u00a0Premier site\u00a0»." },
+            { "key": "audience", "label": "À qui elle s’adresse", "type": "textarea", "maxLength": 160, "help": "Une phrase\u00a0: pour quel artisan, dans quelle situation." },
+            { "key": "includes", "label": "Ce qu’elle comprend", "type": "textarea", "maxLength": 500, "help": "Un élément par ligne\u00a0: passez à la ligne entre deux éléments. Quatre à six lignes courtes se lisent le mieux." },
+            { "key": "price", "label": "Prix", "type": "text", "maxLength": 60, "help": "En texte libre, par exemple «\u00a0À partir de … € HT\u00a0» ou «\u00a0Sur devis\u00a0». Précisez HT ou TTC." },
             { "key": "ctaLabel", "label": "Texte du bouton", "type": "text", "maxLength": 30, "help": "Le bouton mène au formulaire de contact. Laissez vide pour le masquer." },
             { "key": "highlighted", "label": "Mettre en avant", "type": "boolean", "help": "Affiche cette offre sur fond noir. Une seule offre mise en avant reste lisible." }
           ]
@@ -131,9 +131,9 @@
           "label": "Témoignages",
           "type": "list",
           "max": 12,
-          "help": "La section reste masquée tant qu'aucun témoignage n'est saisi. N'ajoutez que de vrais témoignages, avec l'accord de leurs auteurs.",
+          "help": "La section reste masquée tant qu’aucun témoignage n’est saisi. N’ajoutez que de vrais témoignages, avec l’accord de leurs auteurs.",
           "fields": [
-            { "key": "name", "label": "Nom", "type": "text", "required": true, "maxLength": 60, "help": "Prénom et initiale du nom, ou nom de l'entreprise, avec l'accord de la personne." },
+            { "key": "name", "label": "Nom", "type": "text", "required": true, "maxLength": 60, "help": "Prénom et initiale du nom, ou nom de l’entreprise, avec l’accord de la personne." },
             { "key": "quote", "label": "Témoignage", "type": "textarea", "required": true, "maxLength": 400, "help": "Les mots du client, sans les arranger. Les guillemets sont ajoutés automatiquement." },
             { "key": "photo", "label": "Photo (facultative)", "type": "image", "help": "Portrait ou logo, carré de préférence." }
           ]
@@ -151,10 +151,10 @@
           "label": "Questions",
           "type": "list",
           "max": 12,
-          "help": "Douze questions au plus. Chaque réponse s'ouvre d'un clic sur sa question.",
+          "help": "Douze questions au plus. Chaque réponse s’ouvre d’un clic sur sa question.",
           "fields": [
             { "key": "question", "label": "Question", "type": "text", "required": true, "maxLength": 120, "help": "Formulée comme vos clients la posent." },
-            { "key": "answer", "label": "Réponse", "type": "textarea", "required": true, "maxLength": 600, "help": "Courte et concrète : deux ou trois phrases." }
+            { "key": "answer", "label": "Réponse", "type": "textarea", "required": true, "maxLength": 600, "help": "Courte et concrète\u00a0: deux ou trois phrases." }
           ]
         }
       ]
@@ -164,21 +164,21 @@
       "label": "Contact",
       "fields": [
         { "key": "eyebrow", "label": "Étiquette de la section", "type": "text", "maxLength": 40, "help": "Le petit mot en capitales posé au-dessus du formulaire." },
-        { "key": "title", "label": "Grande phrase", "type": "text", "maxLength": 80, "help": "L'invitation à vous écrire, à côté du formulaire." },
-        { "key": "text", "label": "Texte", "type": "textarea", "maxLength": 300, "help": "Une ou deux phrases : ce que vos clients doivent vous dire, et sous quel délai vous répondez." }
+        { "key": "title", "label": "Grande phrase", "type": "text", "maxLength": 80, "help": "L’invitation à vous écrire, à côté du formulaire." },
+        { "key": "text", "label": "Texte", "type": "textarea", "maxLength": 300, "help": "Une ou deux phrases\u00a0: ce que vos clients doivent vous dire, et sous quel délai vous répondez." }
       ]
     },
     {
       "key": "nav",
       "label": "Menu",
       "fields": [
-        { "key": "announcement", "label": "Ligne d'annonce", "type": "text", "maxLength": 90, "help": "Une phrase courte, centrée tout en haut de chaque page. Laissez vide pour ne rien afficher." },
-        { "key": "brandName", "label": "Nom affiché dans le menu", "type": "text", "maxLength": 60, "help": "Affiché en haut à gauche des pages autres que l'accueil (sur l'accueil, c'est le nom géant du bandeau). Laissé vide, le nom du site (Réglages du site) est affiché." },
-        { "key": "homeLabel", "label": "Accueil", "type": "text", "required": true, "maxLength": 30, "help": "Le nombre de pages est fixe ; vous pouvez seulement renommer les entrées." },
-        { "key": "realisationsLabel", "label": "Lien vers les exemples", "type": "text", "maxLength": 30, "help": "Mène à la section des exemples, sur l'accueil. Laissez vide pour retirer ce lien du menu." },
-        { "key": "offresLabel", "label": "Lien vers les offres", "type": "text", "maxLength": 30, "help": "Mène à la section des offres, sur l'accueil. Laissez vide pour retirer ce lien du menu." },
-        { "key": "blogLabel", "label": "Blog", "type": "text", "required": true, "maxLength": 30, "help": "Le nombre de pages est fixe ; vous pouvez seulement renommer les entrées." },
-        { "key": "contactLabel", "label": "Contact", "type": "text", "required": true, "maxLength": 30, "help": "Affiché en pastille noire en haut de chaque page ; mène au formulaire de contact." }
+        { "key": "announcement", "label": "Ligne d’annonce", "type": "text", "maxLength": 90, "help": "Une phrase courte, centrée tout en haut de chaque page. Laissez vide pour ne rien afficher." },
+        { "key": "brandName", "label": "Nom affiché dans le menu", "type": "text", "maxLength": 60, "help": "Affiché en haut à gauche des pages autres que l’accueil (sur l’accueil, c’est le nom géant du bandeau). Laissé vide, le nom du site (Réglages du site) est affiché." },
+        { "key": "homeLabel", "label": "Accueil", "type": "text", "required": true, "maxLength": 30, "help": "Le nombre de pages est fixe\u00a0; vous pouvez seulement renommer les entrées." },
+        { "key": "realisationsLabel", "label": "Lien vers les exemples", "type": "text", "maxLength": 30, "help": "Mène à la section des exemples, sur l’accueil. Laissez vide pour retirer ce lien du menu." },
+        { "key": "offresLabel", "label": "Lien vers les offres", "type": "text", "maxLength": 30, "help": "Mène à la section des offres, sur l’accueil. Laissez vide pour retirer ce lien du menu." },
+        { "key": "blogLabel", "label": "Blog", "type": "text", "required": true, "maxLength": 30, "help": "Le nombre de pages est fixe\u00a0; vous pouvez seulement renommer les entrées." },
+        { "key": "contactLabel", "label": "Contact", "type": "text", "required": true, "maxLength": 30, "help": "Affiché en pastille noire en haut de chaque page\u00a0; mène au formulaire de contact." }
       ]
     },
     {
@@ -186,9 +186,9 @@
       "label": "Pied de page",
       "fields": [
         { "key": "tagline", "label": "Phrase de présentation", "type": "textarea", "maxLength": 200, "help": "Une ou deux phrases, sous le nom de votre entreprise." },
-        { "key": "phone", "label": "Téléphone", "type": "text", "maxLength": 30, "help": "Affiché en bas de chaque page ; depuis un téléphone, un appui lance l'appel." },
-        { "key": "email", "label": "E-mail", "type": "text", "maxLength": 120, "help": "Affiché en bas de chaque page ; un clic ouvre un nouveau message." },
-        { "key": "address", "label": "Adresse", "type": "textarea", "maxLength": 300, "help": "Sur deux lignes : la rue, puis le code postal et la ville (par exemple « 69003 Lyon »), pour que Google la reconnaisse." },
+        { "key": "phone", "label": "Téléphone", "type": "text", "maxLength": 30, "help": "Affiché en bas de chaque page\u00a0; depuis un téléphone, un appui lance l’appel." },
+        { "key": "email", "label": "E-mail", "type": "text", "maxLength": 120, "help": "Affiché en bas de chaque page\u00a0; un clic ouvre un nouveau message." },
+        { "key": "address", "label": "Adresse", "type": "textarea", "maxLength": 300, "help": "Sur deux lignes\u00a0: la rue, puis le code postal et la ville (par exemple «\u00a069003 Lyon\u00a0»), pour que Google la reconnaisse." },
         { "key": "hours", "label": "Horaires", "type": "textarea", "maxLength": 300, "help": "Une ligne par plage horaire. Laissez vide pour ne pas les afficher." },
         {
           "key": "socials",
@@ -197,12 +197,12 @@
           "max": 6,
           "help": "Six liens au plus, affichés en bas de chaque page.",
           "fields": [
-            { "key": "label", "label": "Nom du réseau", "type": "text", "required": true, "maxLength": 40 },
-            { "key": "url", "label": "Adresse de votre page", "type": "url", "required": true }
+            { "key": "label", "label": "Nom du réseau", "type": "text", "required": true, "maxLength": 40, "help": "Par exemple «\u00a0Facebook\u00a0» ou «\u00a0Instagram\u00a0»." },
+            { "key": "url", "label": "Adresse de votre page", "type": "url", "required": true, "help": "L’adresse complète de votre page, qui commence par https://" }
           ]
         },
-        { "key": "copyright", "label": "Mention de copyright", "type": "text", "maxLength": 120, "help": "L'année est ajoutée automatiquement, avec le symbole © devant." },
-        { "key": "legalLinkLabel", "label": "Lien vers les mentions légales", "type": "text", "required": true, "maxLength": 40, "help": "Texte du lien affiché en bas de chaque page ; il sert aussi de titre à la page des mentions légales." }
+        { "key": "copyright", "label": "Mention de copyright", "type": "text", "maxLength": 120, "help": "L’année est ajoutée automatiquement, avec le symbole © devant." },
+        { "key": "legalLinkLabel", "label": "Lien vers les mentions légales", "type": "text", "required": true, "maxLength": 40, "help": "Texte du lien affiché en bas de chaque page\u00a0; il sert aussi de titre à la page des mentions légales." }
       ]
     },
     {
@@ -210,17 +210,17 @@
       "label": "Mentions légales",
       "previewPath": "/mentions-legales",
       "fields": [
-        { "key": "companyName", "label": "Raison sociale", "type": "text", "maxLength": 120, "help": "Nom officiel de votre entreprise, tel qu'il figure au registre." },
+        { "key": "companyName", "label": "Raison sociale", "type": "text", "maxLength": 120, "help": "Nom officiel de votre entreprise, tel qu’il figure au registre." },
         {
           "key": "companyForm",
           "label": "Forme juridique",
           "type": "select",
           "options": ["SAS", "SARL", "EI", "EURL", "SASU", "Auto-entrepreneur", "Autre"],
-          "help": "Avec « Autre », la forme juridique n'est pas affichée : précisez-la dans le texte des mentions légales."
+          "help": "Avec «\u00a0Autre\u00a0», la forme juridique n’est pas affichée\u00a0: précisez-la dans le texte des mentions légales."
         },
         { "key": "siret", "label": "SIRET", "type": "text", "maxLength": 20, "help": "Les 14 chiffres de votre numéro SIRET." },
-        { "key": "publisher", "label": "Directeur de la publication", "type": "text", "maxLength": 120, "help": "La personne responsable du contenu du site, en général le dirigeant de l'entreprise." },
-        { "key": "hostingProvider", "label": "Hébergeur", "type": "textarea", "maxLength": 300, "help": "Nom et adresse de l'hébergeur du site." },
+        { "key": "publisher", "label": "Directeur de la publication", "type": "text", "maxLength": 120, "help": "La personne responsable du contenu du site, en général le dirigeant de l’entreprise." },
+        { "key": "hostingProvider", "label": "Hébergeur", "type": "textarea", "maxLength": 300, "help": "Nom et adresse de l’hébergeur du site." },
         { "key": "legalBody", "label": "Texte des mentions légales", "type": "richtext", "help": "Texte complet des mentions légales, affiché sur la page /mentions-legales" },
         { "key": "privacyBody", "label": "Politique de confidentialité", "type": "richtext", "help": "Affichée sur la même page, sous les mentions légales." }
       ]
