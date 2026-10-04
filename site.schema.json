@@ -141,6 +141,25 @@
       ]
     },
     {
+      "key": "faq",
+      "label": "Questions fréquentes",
+      "fields": [
+        { "key": "eyebrow", "label": "Étiquette de la section", "type": "text", "maxLength": 40, "help": "Le petit mot en capitales posé au-dessus de la section." },
+        { "key": "title", "label": "Grande phrase", "type": "text", "maxLength": 120, "help": "La phrase qui introduit les questions." },
+        {
+          "key": "items",
+          "label": "Questions",
+          "type": "list",
+          "max": 12,
+          "help": "Douze questions au plus. Chaque réponse s'ouvre d'un clic sur sa question.",
+          "fields": [
+            { "key": "question", "label": "Question", "type": "text", "required": true, "maxLength": 120, "help": "Formulée comme vos clients la posent." },
+            { "key": "answer", "label": "Réponse", "type": "textarea", "required": true, "maxLength": 600, "help": "Courte et concrète : deux ou trois phrases." }
+          ]
+        }
+      ]
+    },
+    {
       "key": "nav",
       "label": "Menu",
       "fields": [

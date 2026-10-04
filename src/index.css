@@ -232,6 +232,27 @@ body {
   }
 }
 
+/* Réponses des questions fréquentes : ouverture en douceur là où le
+   navigateur sait animer une hauteur automatique ; ailleurs, ouverture
+   immédiate, comme tout <details>. */
+@media (prefers-reduced-motion: no-preference) {
+  @supports (interpolate-size: allow-keywords) {
+    .faq {
+      interpolate-size: allow-keywords;
+    }
+    .faq::details-content {
+      height: 0;
+      overflow: clip;
+      transition:
+        height 320ms ease,
+        content-visibility 320ms allow-discrete;
+    }
+    .faq[open]::details-content {
+      height: auto;
+    }
+  }
+}
+
 /* Page prérendue plus ancienne que le cache du navigateur : masquée le temps
    que ce cache s'affiche. Voir le script anti-clignotement d'index.html. */
 .content-stale #root {

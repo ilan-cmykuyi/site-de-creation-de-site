@@ -8,6 +8,7 @@ import { SiteHead } from "../components/SiteHead";
 import { ContactForm } from "../components/ContactForm";
 import { useFullSiteContent, useSiteMeta } from "../hooks/site-content-context";
 import { siteShareImage } from "../lib/seo";
+import { Faq } from "../sections/Faq";
 import { Hero } from "../sections/Hero";
 import { Methode } from "../sections/Methode";
 import { Metiers } from "../sections/Metiers";
@@ -31,6 +32,7 @@ export function Home() {
       <Methode />
       <Offres />
       <Testimonials />
+      <Faq />
       <ContactForm />
     </>
   );

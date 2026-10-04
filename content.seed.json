@@ -116,6 +116,40 @@
     "title": "Ce que nos clients en disent.",
     "items": []
   },
+  "faq": {
+    "eyebrow": "Questions fréquentes",
+    "title": "Ce qu'on nous demande le plus souvent.",
+    "items": [
+      {
+        "question": "Je ne suis pas à l'aise avec l'informatique. Est-ce un problème ?",
+        "answer": "Non. Pour changer un texte ou une photo, vous remplissez un champ, vous vérifiez l'aperçu et vous publiez. Nous vous montrons comment faire au moment de la mise en ligne."
+      },
+      {
+        "question": "Combien de temps faut-il pour avoir mon site ?",
+        "answer": "Cela dépend du nombre de pages et du temps qu'il faut pour réunir vos textes et vos photos. Nous vous donnons un délai précis dès le premier échange."
+      },
+      {
+        "question": "Mon site sera-t-il trouvé sur Google ?",
+        "answer": "Votre site est construit pour que Google le comprenne : chaque page dit clairement ce que vous faites et où vous intervenez. Personne ne peut promettre la première place, mais un site clair, rapide et tenu à jour vous donne toutes les chances."
+      },
+      {
+        "question": "Que se passe-t-il quand un client remplit le formulaire ?",
+        "answer": "Sa demande arrive dans votre outil de suivi, avec son nom, ses coordonnées et son message. Vous voyez d'un coup d'œil qui attend une réponse : plus aucun contact ne se perd."
+      },
+      {
+        "question": "L'hébergement est-il compris ?",
+        "answer": "Oui. L'hébergement, les mises à jour et la sécurité de votre site sont compris. Vous n'avez rien de technique à gérer."
+      },
+      {
+        "question": "J'ai déjà un site. Pouvez-vous le refaire ?",
+        "answer": "Oui. Nous reprenons ce qui est utile dans votre site actuel et nous le remplaçons par un site plus clair, lisible sur téléphone, que vous pouvez modifier vous-même."
+      },
+      {
+        "question": "Puis-je ajouter moi-même des photos de mes chantiers ?",
+        "answer": "Oui. Vous les ajoutez depuis votre espace en ligne, vous vérifiez l'aperçu, puis vous publiez."
+      }
+    ]
+  },
   "nav": {
     "announcement": "Votre site, vos textes, vos photos : vous gardez la main.",
     "brandName": "",
