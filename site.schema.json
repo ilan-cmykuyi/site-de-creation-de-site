@@ -98,6 +98,29 @@
       ]
     },
     {
+      "key": "offres",
+      "label": "Offres",
+      "fields": [
+        { "key": "eyebrow", "label": "Étiquette de la section", "type": "text", "maxLength": 40, "help": "Le petit mot en capitales posé au-dessus de la section." },
+        { "key": "title", "label": "Grande phrase", "type": "text", "maxLength": 120, "help": "La phrase qui présente vos formules." },
+        {
+          "key": "items",
+          "label": "Offres",
+          "type": "list",
+          "max": 4,
+          "help": "Quatre offres au plus, côte à côte sur grand écran.",
+          "fields": [
+            { "key": "name", "label": "Nom de l'offre", "type": "text", "required": true, "maxLength": 40, "help": "Court et parlant, par exemple « Premier site »." },
+            { "key": "audience", "label": "À qui elle s'adresse", "type": "textarea", "maxLength": 160, "help": "Une phrase : pour quel artisan, dans quelle situation." },
+            { "key": "includes", "label": "Ce qu'elle comprend", "type": "textarea", "maxLength": 500, "help": "Un élément par ligne : passez à la ligne entre deux éléments. Quatre à six lignes courtes se lisent le mieux." },
+            { "key": "price", "label": "Prix", "type": "text", "maxLength": 60, "help": "En texte libre, par exemple « À partir de … € HT » ou « Sur devis ». Précisez HT ou TTC." },
+            { "key": "ctaLabel", "label": "Texte du bouton", "type": "text", "maxLength": 30, "help": "Le bouton mène au formulaire de contact. Laissez vide pour le masquer." },
+            { "key": "highlighted", "label": "Mettre en avant", "type": "boolean", "help": "Affiche cette offre sur fond noir. Une seule offre mise en avant reste lisible." }
+          ]
+        }
+      ]
+    },
+    {
       "key": "testimonials",
       "label": "Témoignages",
       "fields": [

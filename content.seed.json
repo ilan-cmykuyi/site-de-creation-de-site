@@ -81,6 +81,36 @@
       }
     ]
   },
+  "offres": {
+    "eyebrow": "Offres",
+    "title": "Des formules simples. L'hébergement et la sécurité sont toujours compris.",
+    "items": [
+      {
+        "name": "Premier site",
+        "audience": "Vous n'avez pas encore de site et vous voulez être trouvé rapidement.",
+        "includes": "Une page claire qui présente votre activité\nPensé pour être trouvé sur Google dans votre zone\nTextes et photos modifiables par vous\nDemandes reçues dans votre outil de suivi\nHébergement, mises à jour et sécurité compris",
+        "price": "Prix à compléter",
+        "ctaLabel": "Demander un devis",
+        "highlighted": false
+      },
+      {
+        "name": "Site complet",
+        "audience": "Vous voulez présenter chacun de vos services et montrer vos chantiers.",
+        "includes": "Une page pour chacun de vos services\nUn blog pour vos actualités et vos chantiers\nPensé pour être trouvé sur Google dans votre zone\nTextes et photos modifiables par vous\nDemandes reçues dans votre outil de suivi\nHébergement, mises à jour et sécurité compris",
+        "price": "Prix à compléter",
+        "ctaLabel": "Demander un devis",
+        "highlighted": true
+      },
+      {
+        "name": "Refonte",
+        "audience": "Votre site a vieilli ou ne vous amène plus de demandes.",
+        "includes": "Reprise de vos textes et photos utiles\nUn site lisible sur téléphone\nPensé pour être trouvé sur Google dans votre zone\nTextes et photos modifiables par vous\nDemandes reçues dans votre outil de suivi\nHébergement, mises à jour et sécurité compris",
+        "price": "Prix à compléter",
+        "ctaLabel": "Demander un devis",
+        "highlighted": false
+      }
+    ]
+  },
   "testimonials": {
     "items": [
       { "name": "Prénom N.", "quote": "Votre témoignage client" },
