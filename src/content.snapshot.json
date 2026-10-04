@@ -16,7 +16,172 @@
       "image": null,
       "title": "Plomberie Martin, dépannage 7j/7",
       "ctaLabel": "Demander un devis",
-      "subtitle": "Intervention en moins d'une heure sur Lyon et sa périphérie."
+      "subtitle": "Intervention en moins d'une heure sur Lyon et sa périphérie.",
+      "wordmark": "Booster"
+    },
+    "realisations": {
+      "items": [
+        {
+          "link": "",
+          "name": "Plombier",
+          "color": "Jaune",
+          "image": null,
+          "category": "Dépannage",
+          "isExample": true
+        },
+        {
+          "link": "",
+          "name": "Électricien",
+          "color": "Noir",
+          "image": null,
+          "category": "Dépannage",
+          "isExample": true
+        },
+        {
+          "link": "",
+          "name": "Menuisier",
+          "color": "Sable",
+          "image": null,
+          "category": "Rénovation",
+          "isExample": true
+        },
+        {
+          "link": "",
+          "name": "Carreleur",
+          "color": "Orange brûlé",
+          "image": null,
+          "category": "Rénovation",
+          "isExample": true
+        },
+        {
+          "link": "",
+          "name": "Couvreur",
+          "color": "Vert profond",
+          "image": null,
+          "category": "Extérieur",
+          "isExample": true
+        },
+        {
+          "link": "",
+          "name": "Paysagiste",
+          "color": "Jaune",
+          "image": null,
+          "category": "Extérieur",
+          "isExample": true
+        }
+      ],
+      "title": "Chaque métier a son site. Voici à quoi le vôtre peut ressembler.",
+      "eyebrow": "Exemples de maquettes",
+      "allLabel": "Tout",
+      "exampleBadge": "Exemple de maquette"
+    },
+    "metiers": {
+      "items": [
+        {
+          "name": "Plombiers"
+        },
+        {
+          "name": "Électriciens"
+        },
+        {
+          "name": "Menuisiers"
+        },
+        {
+          "name": "Couvreurs"
+        },
+        {
+          "name": "Paysagistes"
+        },
+        {
+          "name": "Carreleurs"
+        },
+        {
+          "name": "Peintres"
+        },
+        {
+          "name": "Maçons"
+        }
+      ],
+      "title": "Nous créons des sites pour les artisans, quel que soit leur métier.",
+      "eyebrow": "Métiers"
+    },
+    "services": {
+      "items": [
+        {
+          "text": "Nous préparons les textes et la mise en page avec vous, puis nous mettons votre site en ligne. Il est pensé pour être trouvé sur Google dans votre zone.",
+          "title": "Un site livré clé en main"
+        },
+        {
+          "text": "Depuis votre espace en ligne, vous changez un texte ou une photo, vous vérifiez l’aperçu, vous publiez. Sans technicien et sans attendre.",
+          "title": "Vous le modifiez vous-même"
+        },
+        {
+          "text": "Chaque message envoyé par le formulaire de votre site arrive dans votre outil de suivi. Vous voyez d’un coup d’œil qui attend une réponse.",
+          "title": "Aucune demande perdue"
+        },
+        {
+          "text": "Tout est compris. Votre site reste en ligne, à jour et protégé, sans que vous ayez à vous en occuper.",
+          "title": "Hébergement, mises à jour, sécurité"
+        }
+      ],
+      "eyebrow": "Ce que nous faisons",
+      "manifesto": "Vous faites votre métier. Nous vous donnons un site qui vous amène des clients, que vous modifiez vous-même, et qui ne laisse filer aucune demande."
+    },
+    "methode": {
+      "steps": [
+        {
+          "text": "Un premier échange pour comprendre votre métier, votre zone et les chantiers que vous recherchez.",
+          "title": "On fait connaissance"
+        },
+        {
+          "text": "Nous rédigeons les textes et construisons les pages. Vous nous envoyez vos photos et vos informations pratiques.",
+          "title": "Nous préparons votre site"
+        },
+        {
+          "text": "Vous découvrez votre site avant sa mise en ligne. Nous ajustons ce qui doit l’être.",
+          "title": "Vous relisez"
+        },
+        {
+          "text": "Votre site est publié à son adresse. Les demandes envoyées par le formulaire arrivent dans votre outil de suivi.",
+          "title": "Mise en ligne"
+        },
+        {
+          "text": "Nous vous montrons comment modifier vos textes et vos photos. Ensuite, vous êtes autonome, et nous restons joignables.",
+          "title": "Vous prenez la main"
+        }
+      ],
+      "title": "De la première discussion à la mise en ligne, vous savez toujours où en est votre site.",
+      "eyebrow": "Méthode"
+    },
+    "offres": {
+      "items": [
+        {
+          "name": "Premier site",
+          "price": "Prix à compléter",
+          "audience": "Vous n’avez pas encore de site et vous voulez être trouvé rapidement.",
+          "ctaLabel": "Demander un devis",
+          "includes": "Une page claire qui présente votre activité\nPensé pour être trouvé sur Google dans votre zone\nTextes et photos modifiables par vous\nDemandes reçues dans votre outil de suivi\nHébergement, mises à jour et sécurité compris",
+          "highlighted": false
+        },
+        {
+          "name": "Site complet",
+          "price": "Prix à compléter",
+          "audience": "Vous voulez présenter chacun de vos services et montrer vos chantiers.",
+          "ctaLabel": "Demander un devis",
+          "includes": "Une page pour chacun de vos services\nUn blog pour vos actualités et vos chantiers\nPensé pour être trouvé sur Google dans votre zone\nTextes et photos modifiables par vous\nDemandes reçues dans votre outil de suivi\nHébergement, mises à jour et sécurité compris",
+          "highlighted": true
+        },
+        {
+          "name": "Refonte",
+          "price": "Prix à compléter",
+          "audience": "Votre site a vieilli ou ne vous amène plus de demandes.",
+          "ctaLabel": "Demander un devis",
+          "includes": "Reprise de vos textes et photos utiles\nUn site lisible sur téléphone\nPensé pour être trouvé sur Google dans votre zone\nTextes et photos modifiables par vous\nDemandes reçues dans votre outil de suivi\nHébergement, mises à jour et sécurité compris",
+          "highlighted": false
+        }
+      ],
+      "title": "Des formules simples. L’hébergement et la sécurité sont toujours compris.",
+      "eyebrow": "Offres"
     },
     "testimonials": {
       "items": [
@@ -30,13 +195,57 @@
           "photo": null,
           "quote": "Intervention efficace, tarif honnête."
         }
-      ]
+      ],
+      "title": "Ce que nos clients en disent.",
+      "eyebrow": "Témoignages"
+    },
+    "faq": {
+      "items": [
+        {
+          "answer": "Non. Pour changer un texte ou une photo, vous remplissez un champ, vous vérifiez l’aperçu et vous publiez. Nous vous montrons comment faire au moment de la mise en ligne.",
+          "question": "Je ne suis pas à l’aise avec l’informatique. Est-ce un problème ?"
+        },
+        {
+          "answer": "Cela dépend du nombre de pages et du temps qu’il faut pour réunir vos textes et vos photos. Nous vous donnons un délai précis dès le premier échange.",
+          "question": "Combien de temps faut-il pour avoir mon site ?"
+        },
+        {
+          "answer": "Votre site est construit pour que Google le comprenne : chaque page dit clairement ce que vous faites et où vous intervenez. Personne ne peut promettre la première place, mais un site clair, rapide et tenu à jour vous donne toutes les chances.",
+          "question": "Mon site sera-t-il trouvé sur Google ?"
+        },
+        {
+          "answer": "Sa demande arrive dans votre outil de suivi, avec son nom, ses coordonnées et son message. Vous voyez d’un coup d’œil qui attend une réponse : plus aucun contact ne se perd.",
+          "question": "Que se passe-t-il quand un client remplit le formulaire ?"
+        },
+        {
+          "answer": "Oui. L’hébergement, les mises à jour et la sécurité de votre site sont compris. Vous n’avez rien de technique à gérer.",
+          "question": "L’hébergement est-il compris ?"
+        },
+        {
+          "answer": "Oui. Nous reprenons ce qui est utile dans votre site actuel et nous le remplaçons par un site plus clair, lisible sur téléphone, que vous pouvez modifier vous-même.",
+          "question": "J’ai déjà un site. Pouvez-vous le refaire ?"
+        },
+        {
+          "answer": "Oui. Vous les ajoutez depuis votre espace en ligne, vous vérifiez l’aperçu, puis vous publiez.",
+          "question": "Puis-je ajouter moi-même des photos de mes chantiers ?"
+        }
+      ],
+      "title": "Ce qu’on nous demande le plus souvent.",
+      "eyebrow": "Questions fréquentes"
+    },
+    "contact": {
+      "text": "Dites-nous quel est votre métier et où vous travaillez. Nous revenons vers vous pour en parler.",
+      "title": "Parlons de votre site.",
+      "eyebrow": "Contact"
     },
     "nav": {
       "blogLabel": "Blog",
       "brandName": "",
       "homeLabel": "Accueil",
-      "contactLabel": "Contact"
+      "offresLabel": "Offres",
+      "announcement": "Votre site, vos textes, vos photos : vous gardez la main.",
+      "contactLabel": "Contact",
+      "realisationsLabel": "Exemples"
     },
     "footer": {
       "email": "contact@example.com",
