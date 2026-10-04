@@ -79,6 +79,25 @@
       ]
     },
     {
+      "key": "methode",
+      "label": "Méthode",
+      "fields": [
+        { "key": "eyebrow", "label": "Étiquette de la section", "type": "text", "maxLength": 40, "help": "Le petit mot en capitales posé au-dessus de la section." },
+        { "key": "title", "label": "Grande phrase", "type": "text", "maxLength": 120, "help": "La phrase qui présente votre façon de travailler." },
+        {
+          "key": "steps",
+          "label": "Étapes",
+          "type": "list",
+          "max": 8,
+          "help": "De la première discussion à la mise en ligne, dans l'ordre. Les numéros s'affichent tout seuls.",
+          "fields": [
+            { "key": "title", "label": "Titre de l'étape", "type": "text", "required": true, "maxLength": 50, "help": "Quelques mots, par exemple « Mise en ligne »." },
+            { "key": "text", "label": "Texte", "type": "textarea", "maxLength": 220, "help": "Une ou deux phrases : ce qui se passe à cette étape, et ce que vous attendez de votre client." }
+          ]
+        }
+      ]
+    },
+    {
       "key": "testimonials",
       "label": "Témoignages",
       "fields": [

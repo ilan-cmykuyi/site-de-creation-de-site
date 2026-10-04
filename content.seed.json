@@ -55,6 +55,32 @@
       }
     ]
   },
+  "methode": {
+    "eyebrow": "Méthode",
+    "title": "De la première discussion à la mise en ligne, vous savez toujours où en est votre site.",
+    "steps": [
+      {
+        "title": "On fait connaissance",
+        "text": "Un premier échange pour comprendre votre métier, votre zone et les chantiers que vous recherchez."
+      },
+      {
+        "title": "Nous préparons votre site",
+        "text": "Nous rédigeons les textes et construisons les pages. Vous nous envoyez vos photos et vos informations pratiques."
+      },
+      {
+        "title": "Vous relisez",
+        "text": "Vous découvrez votre site avant sa mise en ligne. Nous ajustons ce qui doit l'être."
+      },
+      {
+        "title": "Mise en ligne",
+        "text": "Votre site est publié à son adresse. Les demandes envoyées par le formulaire arrivent dans votre outil de suivi."
+      },
+      {
+        "title": "Vous prenez la main",
+        "text": "Nous vous montrons comment modifier vos textes et vos photos. Ensuite, vous êtes autonome, et nous restons joignables."
+      }
+    ]
+  },
   "testimonials": {
     "items": [
       { "name": "Prénom N.", "quote": "Votre témoignage client" },

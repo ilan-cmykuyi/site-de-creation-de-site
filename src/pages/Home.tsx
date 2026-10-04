@@ -9,6 +9,7 @@ import { ContactForm } from "../components/ContactForm";
 import { useFullSiteContent, useSiteMeta } from "../hooks/site-content-context";
 import { siteShareImage } from "../lib/seo";
 import { Hero } from "../sections/Hero";
+import { Methode } from "../sections/Methode";
 import { Metiers } from "../sections/Metiers";
 import { Realisations } from "../sections/Realisations";
 import { Services } from "../sections/Services";
@@ -26,6 +27,7 @@ export function Home() {
       <Realisations />
       <Metiers />
       <Services />
+      <Methode />
       <Testimonials />
       <ContactForm />
     </>
