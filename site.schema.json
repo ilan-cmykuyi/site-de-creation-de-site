@@ -60,6 +60,25 @@
       ]
     },
     {
+      "key": "services",
+      "label": "Ce que nous faisons",
+      "fields": [
+        { "key": "eyebrow", "label": "Étiquette de la section", "type": "text", "maxLength": 40, "help": "Le petit mot en capitales posé au-dessus de la section." },
+        { "key": "manifesto", "label": "Grande phrase", "type": "textarea", "maxLength": 220, "help": "Votre promesse en une ou deux phrases, affichée en très grand. Courte, elle porte mieux." },
+        {
+          "key": "items",
+          "label": "Prestations",
+          "type": "list",
+          "max": 4,
+          "help": "Trois ou quatre prestations, dans l'ordre où vous voulez les mettre en avant.",
+          "fields": [
+            { "key": "title", "label": "Titre", "type": "text", "required": true, "maxLength": 60, "help": "Quelques mots, par exemple « Hébergement compris »." },
+            { "key": "text", "label": "Texte", "type": "textarea", "maxLength": 200, "help": "Deux lignes environ : ce que cela change pour votre client." }
+          ]
+        }
+      ]
+    },
+    {
       "key": "testimonials",
       "label": "Témoignages",
       "fields": [

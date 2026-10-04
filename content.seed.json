@@ -33,6 +33,28 @@
       { "name": "Maçons" }
     ]
   },
+  "services": {
+    "eyebrow": "Ce que nous faisons",
+    "manifesto": "Vous faites votre métier. Nous vous donnons un site qui vous amène des clients, que vous modifiez vous-même, et qui ne laisse filer aucune demande.",
+    "items": [
+      {
+        "title": "Un site livré clé en main",
+        "text": "Nous préparons les textes et la mise en page avec vous, puis nous mettons votre site en ligne. Il est pensé pour être trouvé sur Google dans votre zone."
+      },
+      {
+        "title": "Vous le modifiez vous-même",
+        "text": "Depuis votre espace en ligne, vous changez un texte ou une photo, vous vérifiez l'aperçu, vous publiez. Sans technicien et sans attendre."
+      },
+      {
+        "title": "Aucune demande perdue",
+        "text": "Chaque message envoyé par le formulaire de votre site arrive dans votre outil de suivi. Vous voyez d'un coup d'œil qui attend une réponse."
+      },
+      {
+        "title": "Hébergement, mises à jour, sécurité",
+        "text": "Tout est compris. Votre site reste en ligne, à jour et protégé, sans que vous ayez à vous en occuper."
+      }
+    ]
+  },
   "testimonials": {
     "items": [
       { "name": "Prénom N.", "quote": "Votre témoignage client" },

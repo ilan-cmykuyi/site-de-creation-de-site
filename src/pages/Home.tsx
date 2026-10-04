@@ -11,6 +11,7 @@ import { siteShareImage } from "../lib/seo";
 import { Hero } from "../sections/Hero";
 import { Metiers } from "../sections/Metiers";
 import { Realisations } from "../sections/Realisations";
+import { Services } from "../sections/Services";
 import { Testimonials } from "../sections/Testimonials";
 
 export function Home() {
@@ -24,6 +25,7 @@ export function Home() {
       <Hero />
       <Realisations />
       <Metiers />
+      <Services />
       <Testimonials />
       <ContactForm />
     </>
