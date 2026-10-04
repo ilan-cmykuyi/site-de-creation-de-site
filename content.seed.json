@@ -1,7 +1,8 @@
 {
   "hero": {
-    "title": "Votre titre principal",
-    "subtitle": "Une phrase qui présente votre activité, ce que vous proposez et où vous intervenez.",
+    "wordmark": "Booster",
+    "title": "Des sites internet pour les artisans, faits pour être trouvés sur Google.",
+    "subtitle": "Un site professionnel livré clé en main, que vous modifiez vous-même, et des demandes de contact qui ne se perdent plus.",
     "ctaLabel": "Demander un devis"
   },
   "testimonials": {

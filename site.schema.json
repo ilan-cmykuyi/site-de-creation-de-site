@@ -9,10 +9,11 @@
       "key": "hero",
       "label": "Bandeau d'accueil",
       "fields": [
-        { "key": "title", "label": "Titre principal", "type": "text", "required": true, "maxLength": 80 },
-        { "key": "subtitle", "label": "Sous-titre", "type": "textarea", "maxLength": 200 },
-        { "key": "image", "label": "Photo", "type": "image", "help": "Paysage, 1600 px de large minimum" },
-        { "key": "ctaLabel", "label": "Texte du bouton", "type": "text" }
+        { "key": "wordmark", "label": "Nom géant", "type": "text", "maxLength": 16, "help": "Le nom affiché en très grandes lettres, sur toute la largeur, en haut de l'accueil. Un mot court rend le mieux : plus il est long, plus les lettres sont petites. Laissé vide, le nom du site est affiché." },
+        { "key": "title", "label": "Accroche", "type": "text", "required": true, "maxLength": 80, "help": "La phrase principale de l'accueil : ce que vous faites et pour qui. C'est aussi ce que Google lit en premier." },
+        { "key": "subtitle", "label": "Sous-titre", "type": "textarea", "maxLength": 200, "help": "Une ou deux phrases qui complètent l'accroche." },
+        { "key": "ctaLabel", "label": "Texte du bouton", "type": "text", "maxLength": 30, "help": "Le bouton mène au formulaire de contact. Laissez vide pour le masquer." },
+        { "key": "image", "label": "Visuel large (facultatif)", "type": "image", "help": "Affiché sur toute la largeur, sous l'accroche. Format paysage, 2000 px de large au minimum. Sans image, rien ne s'affiche à cet endroit." }
       ]
     },
     {
