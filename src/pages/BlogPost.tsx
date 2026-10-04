@@ -7,6 +7,7 @@ import { usePrerenderedArticle, useSection, useSiteMeta } from "../hooks/site-co
 import { ApiError, fetchPublicJson, hasPublicToken } from "../lib/api";
 import { articleHead, articleView, type ArticleFetch } from "../lib/article-view";
 import { formatDate } from "../lib/format";
+import { BODY, WRAP } from "../lib/layout";
 import type { Article } from "../types/site-content";
 import type { NavSection } from "../types/standard-sections";
 import { ui } from "../ui-strings";
@@ -61,7 +62,9 @@ export function BlogPost() {
     return (
       <>
         {head}
-        <p className="mx-auto max-w-3xl px-4 py-16 text-slate-600">{ui.blog.loading}</p>
+        <div className={`${WRAP} pt-8 pb-24 md:pt-12 md:pb-36`}>
+          <p className={`border-t border-rule pt-8 text-muted ${BODY}`}>{ui.blog.loading}</p>
+        </div>
       </>
     );
   }
@@ -69,9 +72,9 @@ export function BlogPost() {
     return (
       <>
         {head}
-        <div className="mx-auto max-w-3xl px-4 py-16">
-          <p className="text-slate-600">{ui.blog.unavailable}</p>
-          <Link to="/blog" className="mt-6 inline-block text-blue-700 hover:underline">
+        <div className={`${WRAP} pt-8 pb-24 md:pt-12 md:pb-36`}>
+          <p className={`border-t border-rule pt-8 text-muted ${BODY} md:text-[18px]`}>{ui.blog.unavailable}</p>
+          <Link to="/blog" className="pill mt-8">
             {ui.blog.back(blogLabel ?? "")}
           </Link>
         </div>
@@ -84,13 +87,21 @@ export function BlogPost() {
   return (
     <>
       {head}
-      <article className="mx-auto max-w-3xl px-4 py-16">
-        <Link to="/blog" className="text-sm text-blue-700 hover:underline">
-          {ui.blog.back(blogLabel ?? "")}
-        </Link>
-        {date && <p className="mt-6 text-sm text-slate-500">{date}</p>}
-        <h1 className="mt-1 text-3xl font-bold tracking-tight text-slate-900">{article.title}</h1>
-        <ResponsiveImage image={article.cover} sizes="(min-width: 768px) 768px, 100vw" className="mt-8 w-full rounded-lg object-cover" />
+      <article className={`${WRAP} pt-8 pb-24 md:pt-12 md:pb-36`}>
+        <div className="flex flex-wrap items-center justify-between gap-4 border-t border-rule pt-6">
+          <Link to="/blog" className="pill">
+            {ui.blog.back(blogLabel ?? "")}
+          </Link>
+          {date && <p className="caps text-muted">{date}</p>}
+        </div>
+        <h1 className="mt-10 max-w-[22ch] text-[38px] leading-[1.04] font-medium tracking-[-0.03em] text-balance md:mt-16 md:text-[60px] lg:text-[80px]">
+          {article.title}
+        </h1>
+        <ResponsiveImage
+          image={article.cover}
+          sizes="(min-width: 1680px) 1616px, 100vw"
+          className="mt-10 aspect-[16/9] w-full rounded-[20px] object-cover md:mt-16"
+        />
         {/*
           bodyHtml est assaini côté serveur (lib/sites/sanitize.ts du CRM, liste
           blanche de balises) à CHAQUE enregistrement dans Lea CRM, et celui de
@@ -100,7 +111,9 @@ export function BlogPost() {
           de même avec un HTML d'une autre provenance (paramètre d'URL, autre
           API, saisie locale) : ce serait une faille XSS.
         */}
-        <div className="prose prose-slate mt-8 max-w-none" dangerouslySetInnerHTML={{ __html: article.bodyHtml }} />
+        <div className="mt-10 grid md:mt-16 lg:grid-cols-12 lg:gap-x-8">
+          <div className="prose prose-site max-w-[68ch] lg:col-span-7 lg:col-start-6" dangerouslySetInnerHTML={{ __html: article.bodyHtml }} />
+        </div>
       </article>
     </>
   );
