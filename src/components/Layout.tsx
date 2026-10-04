@@ -44,7 +44,7 @@ export function Layout({ children }: { children: ReactNode }) {
   return (
     <div className="flex min-h-screen flex-col">
       {isPreview && (
-        <div role="status" className="bg-amber-100 px-4 py-2 text-center text-sm text-amber-900">
+        <div role="status" className="caps bg-jaune px-4 py-2.5 text-center text-ink">
           {ui.preview.badge}
         </div>
       )}

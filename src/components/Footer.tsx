@@ -7,6 +7,7 @@
 import { Link } from "react-router";
 import { useSection, useSiteMeta } from "../hooks/site-content-context";
 import { useBrowserValue } from "../hooks/useBrowserValue";
+import { WRAP } from "../lib/layout";
 import type { FooterSection, NavSection } from "../types/standard-sections";
 import { ui } from "../ui-strings";
 
@@ -31,6 +32,9 @@ function telHref(phone: string): string | null {
   return dialable.length >= 4 ? `tel:${dialable}` : null;
 }
 
+const headingClass = "caps text-muted";
+const linkClass = "underline-offset-4 hover:underline";
+
 export function Footer() {
   const { site } = useSiteMeta();
   const { brandName } = useSection<NavSection>("nav");
@@ -43,31 +47,23 @@ export function Footer() {
   const hasContact = Boolean(phone || email || address);
 
   return (
-    <footer className="border-t border-slate-200 bg-slate-50 text-sm">
-      <div className="mx-auto grid max-w-5xl gap-8 px-4 py-10 sm:grid-cols-2 md:grid-cols-3">
-        <div>
-          <p className="text-base font-semibold text-slate-900">{name}</p>
-          {tagline && <p className="mt-2 whitespace-pre-line text-slate-600">{tagline}</p>}
-          {links.length > 0 && (
-            <ul className="mt-4 flex flex-wrap gap-x-4 gap-y-1">
-              {links.map((link, i) => (
-                // Pas d'identifiant stable dans un élément de liste : l'index.
-                <li key={i}>
-                  <a href={link.url} target="_blank" rel="noopener noreferrer" className="text-slate-700 underline-offset-2 hover:underline">
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
+    <footer className={WRAP}>
+      <div className="grid gap-x-8 gap-y-10 border-t border-rule pt-10 pb-14 md:grid-cols-12 md:pt-14 md:pb-20">
+        <div className="md:col-span-12 lg:col-span-4">
+          <p className="font-display text-[17px] leading-none uppercase">{name}</p>
+          {tagline && (
+            <p className="mt-5 max-w-[34ch] text-[20px] leading-[1.3] font-medium tracking-[-0.01em] text-balance whitespace-pre-line md:text-[22px]">
+              {tagline}
+            </p>
           )}
         </div>
         {hasContact && (
-          <div>
-            <h2 className="font-semibold text-slate-900">{ui.footer.contact}</h2>
-            <address className="mt-2 grid gap-1 not-italic text-slate-600">
+          <div className="md:col-span-4 lg:col-span-3 lg:col-start-6">
+            <h2 className={headingClass}>{ui.footer.contact}</h2>
+            <address className="mt-4 grid gap-1.5 text-[16px] not-italic">
               {phone &&
                 (tel ? (
-                  <a href={tel} className="hover:text-slate-900">
+                  <a href={tel} className={linkClass}>
                     {phone}
                   </a>
                 ) : (
@@ -75,7 +71,7 @@ export function Footer() {
                 ))}
               {email &&
                 (EMAIL_RE.test(email) ? (
-                  <a href={`mailto:${email}`} className="hover:text-slate-900">
+                  <a href={`mailto:${email}`} className={linkClass}>
                     {email}
                   </a>
                 ) : (
@@ -86,21 +82,34 @@ export function Footer() {
           </div>
         )}
         {hours && (
-          <div>
-            <h2 className="font-semibold text-slate-900">{ui.footer.hours}</h2>
-            <p className="mt-2 whitespace-pre-line text-slate-600">{hours}</p>
+          <div className="md:col-span-4 lg:col-span-2">
+            <h2 className={headingClass}>{ui.footer.hours}</h2>
+            <p className="mt-4 text-[16px] whitespace-pre-line">{hours}</p>
+          </div>
+        )}
+        {links.length > 0 && (
+          <div className="md:col-span-4 lg:col-span-2">
+            <h2 className={headingClass}>{ui.footer.socials}</h2>
+            <ul className="mt-4 flex flex-wrap gap-1.5">
+              {links.map((link, i) => (
+                // Pas d'identifiant stable dans un élément de liste : l'index.
+                <li key={i}>
+                  <a href={link.url} target="_blank" rel="noopener noreferrer" className="pill">
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
         )}
       </div>
-      <div className="border-t border-slate-200">
-        <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-x-6 gap-y-2 px-4 py-4 text-slate-500">
-          <p>{ui.footer.copyright(year, copyright || name)}</p>
-          {legalLinkLabel && (
-            <Link to="/mentions-legales" className="hover:text-slate-900">
-              {legalLinkLabel}
-            </Link>
-          )}
-        </div>
+      <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-3 border-t border-rule py-5 text-[13px] text-muted">
+        <p>{ui.footer.copyright(year, copyright || name)}</p>
+        {legalLinkLabel && (
+          <Link to="/mentions-legales" className={`${linkClass} hover:text-ink`}>
+            {legalLinkLabel}
+          </Link>
+        )}
       </div>
     </footer>
   );

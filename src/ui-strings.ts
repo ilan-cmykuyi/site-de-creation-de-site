@@ -61,6 +61,7 @@ export const ui = {
   footer: {
     contact: "Coordonnées",
     hours: "Horaires",
+    socials: "Réseaux",
     /** Le symbole et l'année devant la mention saisie dans Lea CRM (footer.copyright). */
     copyright: (year: number, text: string) => `© ${year} ${text}`,
   },

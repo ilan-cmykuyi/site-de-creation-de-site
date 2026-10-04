@@ -232,6 +232,34 @@ body {
   }
 }
 
+/* Textes longs (mentions légales, corps des articles) : la typographie de
+   @tailwindcss/typography, aux couleurs du site. */
+.prose-site {
+  --tw-prose-body: var(--color-ink);
+  --tw-prose-headings: var(--color-ink);
+  --tw-prose-lead: var(--color-muted);
+  --tw-prose-links: var(--color-ink);
+  --tw-prose-bold: var(--color-ink);
+  --tw-prose-counters: var(--color-muted);
+  --tw-prose-bullets: var(--color-muted);
+  --tw-prose-hr: var(--color-rule);
+  --tw-prose-quotes: var(--color-ink);
+  --tw-prose-quote-borders: var(--color-ink);
+  --tw-prose-captions: var(--color-muted);
+  --tw-prose-code: var(--color-ink);
+  --tw-prose-th-borders: var(--color-rule);
+  --tw-prose-td-borders: var(--color-rule);
+  font-size: 17px;
+  line-height: 1.65;
+}
+.prose-site :where(h2, h3, h4) {
+  font-weight: 500;
+  letter-spacing: -0.015em;
+}
+.prose-site :where(a) {
+  text-underline-offset: 3px;
+}
+
 /* Réponses des questions fréquentes : ouverture en douceur là où le
    navigateur sait animer une hauteur automatique ; ailleurs, ouverture
    immédiate, comme tout <details>. */

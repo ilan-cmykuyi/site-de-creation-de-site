@@ -2,23 +2,28 @@
 import { useConsent } from "../hooks/useConsent";
 import { ui } from "../ui-strings";
 
-/** Bannière minimale, affichée seulement si le site a un identifiant de suivi et qu'aucun choix n'est mémorisé. */
+/**
+ * Bannière minimale, affichée seulement si le site a un identifiant de suivi
+ * et qu'aucun choix n'est mémorisé. Refuser est aussi simple et aussi visible
+ * qu'accepter : deux pastilles identiques.
+ */
 export function ConsentBanner() {
   const { needsDecision, grant, deny } = useConsent();
   if (!needsDecision) return null;
 
   return (
-    <div role="dialog" className="fixed inset-x-0 bottom-0 z-50 border-t border-slate-700 bg-slate-900 px-4 py-4 text-white">
-      <div className="mx-auto flex max-w-5xl flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-        <p className="text-sm">{ui.consent.text}</p>
-        <div className="flex gap-2">
-          <button type="button" onClick={deny} className="rounded-md border border-slate-500 px-4 py-2 text-sm hover:bg-slate-800">
-            {ui.consent.refuse}
-          </button>
-          <button type="button" onClick={grant} className="rounded-md bg-white px-4 py-2 text-sm font-medium text-slate-900 hover:bg-slate-200">
-            {ui.consent.accept}
-          </button>
-        </div>
+    <div
+      role="dialog"
+      className="fixed inset-x-3 bottom-3 z-50 flex flex-col gap-4 rounded-[20px] bg-ink p-5 text-paper md:inset-x-auto md:right-6 md:bottom-6 md:max-w-md"
+    >
+      <p className="text-[15px] leading-snug">{ui.consent.text}</p>
+      <div className="flex gap-2">
+        <button type="button" onClick={deny} className="pill bg-paper">
+          {ui.consent.refuse}
+        </button>
+        <button type="button" onClick={grant} className="pill bg-paper">
+          {ui.consent.accept}
+        </button>
       </div>
     </div>
   );

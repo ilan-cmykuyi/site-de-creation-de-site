@@ -186,10 +186,10 @@
       "label": "Pied de page",
       "fields": [
         { "key": "tagline", "label": "Phrase de présentation", "type": "textarea", "maxLength": 200, "help": "Une ou deux phrases, sous le nom de votre entreprise." },
-        { "key": "phone", "label": "Téléphone", "type": "text", "maxLength": 30 },
-        { "key": "email", "label": "E-mail", "type": "text", "maxLength": 120 },
-        { "key": "address", "label": "Adresse", "type": "textarea", "maxLength": 300 },
-        { "key": "hours", "label": "Horaires", "type": "textarea", "maxLength": 300 },
+        { "key": "phone", "label": "Téléphone", "type": "text", "maxLength": 30, "help": "Affiché en bas de chaque page ; depuis un téléphone, un appui lance l'appel." },
+        { "key": "email", "label": "E-mail", "type": "text", "maxLength": 120, "help": "Affiché en bas de chaque page ; un clic ouvre un nouveau message." },
+        { "key": "address", "label": "Adresse", "type": "textarea", "maxLength": 300, "help": "Sur deux lignes : la rue, puis le code postal et la ville (par exemple « 69003 Lyon »), pour que Google la reconnaisse." },
+        { "key": "hours", "label": "Horaires", "type": "textarea", "maxLength": 300, "help": "Une ligne par plage horaire. Laissez vide pour ne pas les afficher." },
         {
           "key": "socials",
           "label": "Réseaux sociaux",
@@ -218,8 +218,8 @@
           "options": ["SAS", "SARL", "EI", "EURL", "SASU", "Auto-entrepreneur", "Autre"],
           "help": "Avec « Autre », la forme juridique n'est pas affichée : précisez-la dans le texte des mentions légales."
         },
-        { "key": "siret", "label": "SIRET", "type": "text", "maxLength": 20 },
-        { "key": "publisher", "label": "Directeur de la publication", "type": "text", "maxLength": 120, "help": "Responsable de la publication" },
+        { "key": "siret", "label": "SIRET", "type": "text", "maxLength": 20, "help": "Les 14 chiffres de votre numéro SIRET." },
+        { "key": "publisher", "label": "Directeur de la publication", "type": "text", "maxLength": 120, "help": "La personne responsable du contenu du site, en général le dirigeant de l'entreprise." },
         { "key": "hostingProvider", "label": "Hébergeur", "type": "textarea", "maxLength": 300, "help": "Nom et adresse de l'hébergeur du site." },
         { "key": "legalBody", "label": "Texte des mentions légales", "type": "richtext", "help": "Texte complet des mentions légales, affiché sur la page /mentions-legales" },
         { "key": "privacyBody", "label": "Politique de confidentialité", "type": "richtext", "help": "Affichée sur la même page, sous les mentions légales." }

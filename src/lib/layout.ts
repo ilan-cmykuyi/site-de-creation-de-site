@@ -13,5 +13,8 @@ export const SECTION_SPACE = "pt-24 md:pt-36 lg:pt-44";
 export const TITLE =
   "text-[34px] leading-[1.06] font-medium tracking-[-0.025em] text-balance md:text-[48px] lg:text-[64px]";
 
+/** Le titre d'une page autre que l'accueil (blog, mentions légales, page introuvable). */
+export const PAGE_TITLE = "text-[44px] leading-[1] font-medium tracking-[-0.035em] text-balance md:text-[72px] lg:text-[96px]";
+
 /** Le texte courant posé sous un titre ou dans une carte. */
 export const BODY = "text-[16px] leading-relaxed text-pretty md:text-[17px]";
